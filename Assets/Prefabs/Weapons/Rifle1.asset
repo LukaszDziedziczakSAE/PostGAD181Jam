@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9900711c8a783c7439a76d6950e44398, type: 3}
+  m_Name: Rifle1
+  m_EditorClassIdentifier: 
+  <WeaponPrefab>k__BackingField: {fileID: -5779912274463793702, guid: 9857694799f9ffb4cbccb755f0974dc8,
+    type: 3}
+  <FireRate>k__BackingField: 0.1
+  <Damage>k__BackingField: 10
+  <SpawnPosition>k__BackingField: {x: 0, y: 0, z: 0}
+  <SpawnRotation>k__BackingField: {x: 0, y: 0, z: 0}
