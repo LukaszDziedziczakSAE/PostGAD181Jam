@@ -3410,6 +3410,7 @@ GameObject:
   - component: {fileID: 1284752076607542377}
   - component: {fileID: 7782681699005980355}
   - component: {fileID: 5694009421492793004}
+  - component: {fileID: 1609662098586068481}
   m_Layer: 0
   m_Name: SoliderCharacter
   m_TagString: Untagged
@@ -3561,7 +3562,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 0}
-  <Weapons>k__BackingField: []
+  <Weapons>k__BackingField:
+  - {fileID: 11400000, guid: 9e140783ad657c14db52697e7e87a230, type: 2}
   <Index>k__BackingField: -1
 --- !u!114 &1284752076607542377
 MonoBehaviour:
@@ -3593,7 +3595,7 @@ MonoBehaviour:
   <AI>k__BackingField: {fileID: 2153867371434918267}
   <StartingMode>k__BackingField: 0
   <StartingPoint>k__BackingField: {x: 0, y: 0, z: 0}
-  <PartolManager>k__BackingField: {fileID: 0}
+  <PartolManager>k__BackingField: {fileID: 1609662098586068481}
   <NavMeshAgent>k__BackingField: {fileID: 1756283033978083943}
   <StatusIndicator>k__BackingField: {fileID: 0}
   <EngagmentRange>k__BackingField: 10
@@ -3629,6 +3631,23 @@ MonoBehaviour:
   character: {fileID: 0}
   impact: {fileID: 0}
   impactDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &1609662098586068481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6298338034348554367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c4b1e56ef25594181af21d3945cb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  waypoints: []
+  waypointProximity: 0.5
+  index: -1
+  backward: 0
 --- !u!1 &6325781396582261518
 GameObject:
   m_ObjectHideFlags: 0
