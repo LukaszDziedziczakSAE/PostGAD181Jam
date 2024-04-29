@@ -27625,7 +27625,7 @@ GameObject:
   - component: {fileID: 1914159292}
   - component: {fileID: 1914159291}
   - component: {fileID: 1914159294}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30797,11 +30797,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8658418501781114960, guid: 265535b85b5db7940b78dd1b3b09ecb4,
-        type: 3}
-      propertyPath: m_Name
-      value: Slope
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
