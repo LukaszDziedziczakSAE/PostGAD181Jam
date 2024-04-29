@@ -109,6 +109,10 @@ public class CS_Locomotion : CharacterState
 
         Vector3 forward = player.CamFoward - player.transform.position;
         Vector3 right = player.CamRight - player.transform.position;
+
+        forward.y = character.transform.position.y;
+        right.y = character.transform.position.y;
+
         position += forward * playerInput.Movement.y * speed * deltaTime 
             + right * playerInput.Movement.x * speed * deltaTime;
         FaceDirection(forward, deltaTime);
@@ -121,6 +125,8 @@ public class CS_Locomotion : CharacterState
             character.transform.rotation,
             Quaternion.LookRotation(target),
             deltaTime * (isRunning ? character.RotationDamping * 2 : character.RotationDamping));
+
+        character.transform.eulerAngles = new Vector3(0, character.transform.eulerAngles.y, 0);
     }
 
     private Vector2 movement
