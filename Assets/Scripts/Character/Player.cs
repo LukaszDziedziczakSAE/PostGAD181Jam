@@ -9,8 +9,7 @@ public class Player : Character
     [field: SerializeField, Header("Player Referances")] public InputReader Input { get; private set; }
 
     [field: SerializeField] public Footsteps Footsteps { get; private set; }
-
-    [field: SerializeField] public PlayerInventory PlayerInventory { get; private set; }
+    [field: SerializeField] public PlayerInventory Inventory { get; private set; }
     private void Awake()
     {
         if (Player.Instance == null) Instance = this;
