@@ -2349,11 +2349,11 @@ MonoBehaviour:
   <WalkSpeed>k__BackingField: 5
   <RunSpeed>k__BackingField: 10
   <SneakSpeed>k__BackingField: 10
-  <RotationDamping>k__BackingField: 0.5
+  <RotationDamping>k__BackingField: 30
   <PushingSpeed>k__BackingField: 4
   <Input>k__BackingField: {fileID: 21381890256665771}
   <Footsteps>k__BackingField: {fileID: 0}
-  <PlayerInventory>k__BackingField: {fileID: 2898861561543528232}
+  <Inventory>k__BackingField: {fileID: 2898861561543528232}
 --- !u!114 &21381890256665771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2384,6 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26ec13e322e4ee4da0a766a0f332537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <BottlesCollected>k__BackingField: 0
 --- !u!1 &3211844582959791903
 GameObject:
   m_ObjectHideFlags: 0

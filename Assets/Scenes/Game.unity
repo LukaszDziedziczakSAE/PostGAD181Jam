@@ -9681,7 +9681,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 715838068}
+  m_Mesh: {fileID: 59011}
 --- !u!33 &595979012
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -15753,7 +15753,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 856852682}
+  m_Mesh: {fileID: 1364041471}
 --- !u!33 &1381361563
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -18739,10 +18739,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camFocus: {fileID: 1412740556}
-  distanceToPlayer: 6
+  distanceToPlayer: 3.5
   angle: 20
   characterHeightOffeset: 1.6
-  rotationRate: 300
+  rotationRate: 500
   angleToPlayer: 0
 --- !u!114 &1827334490
 MonoBehaviour:
