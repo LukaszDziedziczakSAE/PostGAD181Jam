@@ -100,12 +100,17 @@ public class CS_Pushing : CharacterState
         character.Rigidbody.MovePosition(position);
     }
 
-    private void FaceDirection(Vector3 target, float deltaTime)
+    /*private void FaceDirection(Vector3 target, float deltaTime)
     {
         character.transform.rotation = Quaternion.Lerp(
             character.transform.rotation,
             Quaternion.LookRotation(target),
         deltaTime * (isRunning ? character.RotationDamping * 2 : character.RotationDamping));
+    }*/
+
+    private void FaceDirection()
+    {
+
     }
 
     private Vector2 movement
