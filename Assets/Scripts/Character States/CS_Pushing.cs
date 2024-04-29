@@ -35,6 +35,17 @@ public class CS_Pushing : CharacterState
         if (playerInput == null) Debug.LogError("Missing player input");
 
         character.transform.eulerAngles = new Vector3 (character.transform.eulerAngles.x, crate.PlayerFaceDirection, character.transform.eulerAngles.y);
+
+        Vector3 position = character.transform.position;
+        if (crate.AxisOfMovement == Crate.EAxisOfMovement.zAxis)
+        {
+            position.z = crate.PlayerPosition;
+        }
+        else if (crate.AxisOfMovement == Crate.EAxisOfMovement.xAxis)
+        {
+            position.x = crate.PlayerPosition;
+        }
+        character.transform.position = position;
     }
 
     public override void Tick(float deltaTime)

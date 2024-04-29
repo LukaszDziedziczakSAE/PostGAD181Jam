@@ -19846,6 +19846,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallCrate
       objectReference: {fileID: 0}
+    - target: {fileID: 5629829551114507240, guid: a9825e5d3ab99c546b38e39c8927bd70,
+        type: 3}
+      propertyPath: clearance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5629829551114507240, guid: a9825e5d3ab99c546b38e39c8927bd70,
+        type: 3}
+      propertyPath: axisOfMovement
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5981251741308326826, guid: a9825e5d3ab99c546b38e39c8927bd70,
         type: 3}
       propertyPath: m_LocalScale.x

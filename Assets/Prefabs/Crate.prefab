@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axisOfMovement: 0
+  clearance: 2
 --- !u!65 &422784503298298802
 BoxCollider:
   m_ObjectHideFlags: 0

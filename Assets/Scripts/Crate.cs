@@ -5,10 +5,12 @@ using UnityEngine;
 public class Crate : MonoBehaviour
 {
     [SerializeField] EAxisOfMovement axisOfMovement;
+    [SerializeField] float clearance = 1f;
     bool characterEntered;
     bool forward;
 
     public EAxisOfMovement AxisOfMovement => axisOfMovement;
+    public float Clearance => clearance;
 
     public enum EAxisOfMovement
     {
@@ -75,6 +77,24 @@ public class Crate : MonoBehaviour
             {
                 if (forward) return 0;
                 else return 180f;
+            }
+            else return 0;
+        }
+    }
+
+    public float PlayerPosition
+    {
+        get
+        {
+            if (axisOfMovement == EAxisOfMovement.xAxis)
+            {
+                if (forward) return transform.position.x - clearance;
+                else return transform.position.x + clearance;
+            }
+            else if (axisOfMovement == EAxisOfMovement.zAxis)
+            {
+                if (forward) return transform.position.z - clearance;
+                else return transform.position.z + clearance;
             }
             else return 0;
         }
