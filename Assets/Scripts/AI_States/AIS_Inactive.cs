@@ -10,7 +10,7 @@ public class AIS_Inactive : AI_State
 
     public override void StateStart()
     {
-        enemy.StatusIndicator.Hide();
+        if (enemy.StatusIndicator != null) enemy.StatusIndicator.Hide();
     }
 
     public override void Tick(float deltaTime)

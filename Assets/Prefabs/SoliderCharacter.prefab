@@ -4586,7 +4586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d9b924b582d9b4db7fc04a209d350d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ai: {fileID: 0}
+  ai: {fileID: 2153867371434918267}
   walkingHearingRange: 5
   runningHearingRange: 10
   firearmHearingRange: 20
@@ -4602,7 +4602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4468b5a34a039964db60cb580efe11ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ai: {fileID: 0}
+  ai: {fileID: 2153867371434918267}
   sightRange: 20
   sightAngle: 40
   gizmoLines: 40

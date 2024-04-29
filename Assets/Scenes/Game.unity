@@ -15695,7 +15695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098385171cd031c4e873d1a84f2624b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
+  Canvas: {fileID: 1299447441}
   blackscreen: {fileID: 0}
   bottleCountIndicator: {fileID: 1839055046}
 --- !u!114 &1299447439
@@ -19314,6 +19314,7 @@ GameObject:
   - component: {fileID: 1914159293}
   - component: {fileID: 1914159292}
   - component: {fileID: 1914159291}
+  - component: {fileID: 1914159294}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -19395,6 +19396,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1914159294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914159290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: f5fadb9cfd9e2f540b501222adf42a96, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1928200159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20225,6 +20257,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1284752076607542377, guid: 147e80aba28b7d342a4f2e3e599dfccf,
+        type: 3}
+      propertyPath: <StartingMode>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6298338034348554367, guid: 147e80aba28b7d342a4f2e3e599dfccf,
         type: 3}
       propertyPath: m_Name
