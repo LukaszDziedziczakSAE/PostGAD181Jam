@@ -18739,10 +18739,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camFocus: {fileID: 1412740556}
-  distanceToPlayer: 10
-  angle: 60
+  distanceToPlayer: 6
+  angle: 20
   characterHeightOffeset: 1.6
-  rotationRate: 0
+  rotationRate: 300
   angleToPlayer: 0
 --- !u!114 &1827334490
 MonoBehaviour:
