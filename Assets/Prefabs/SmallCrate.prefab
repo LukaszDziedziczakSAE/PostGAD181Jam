@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6797356315014973052}
   - component: {fileID: 5629829551114507240}
   - component: {fileID: 872611307660835403}
+  - component: {fileID: 3867489651744849230}
   m_Layer: 0
   m_Name: SmallCrate
   m_TagString: Untagged
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axisOfMovement: 0
-  clearance: 2
+  clearance: 1.7
 --- !u!65 &872611307660835403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -141,5 +142,32 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9082465, y: 0.48350412, z: 0.81122106}
-  m_Center: {x: -0.00018174946, y: 0.24175206, z: -0.01827392}
+  m_Size: {x: 0.8, y: 0.4, z: 1}
+  m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!54 &3867489651744849230
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817319276091134228}
+  serializedVersion: 4
+  m_Mass: 10000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UIElements;
 
 public class CS_Pushing : CharacterState
 {
@@ -26,6 +27,8 @@ public class CS_Pushing : CharacterState
             ai = enemy.AI;
         }*/
         this.crate = crate;
+
+        //Debug.Log(character.name + " entered pushing state");
     }
 
     public override void StateStart()
@@ -34,7 +37,7 @@ public class CS_Pushing : CharacterState
 
         if (playerInput == null) Debug.LogError("Missing player input");
 
-        character.transform.eulerAngles = new Vector3 (character.transform.eulerAngles.x, crate.PlayerFaceDirection, character.transform.eulerAngles.y);
+        character.transform.eulerAngles = new Vector3 (character.transform.eulerAngles.x, crate.PlayerFaceDirection, character.transform.eulerAngles.z);
 
         Vector3 position = character.transform.position;
         if (crate.AxisOfMovement == Crate.EAxisOfMovement.zAxis)
@@ -45,6 +48,8 @@ public class CS_Pushing : CharacterState
         {
             position.x = crate.PlayerPosition;
         }
+
+        //Debug.Log("crate position = " + crate.transform.position + ", setting position = " + position);
         character.transform.position = position;
     }
 
@@ -78,7 +83,7 @@ public class CS_Pushing : CharacterState
             Game.CameraController.Rotate(-playerInput.Look.x);
         }
 
-        if (playerInput.Movement.y < 0)
+        if (playerInput.Movement.y < 0 || playerInput.Movement.x != 0)
         {
             character.SetNewState(new CS_Locomotion(character));
         }
@@ -88,20 +93,25 @@ public class CS_Pushing : CharacterState
     {
         if (movement.magnitude > 0 && playerInput != null)
         {
-            Move(deltaTime);
+            //Move(deltaTime);
+
+            crate.Move(playerInput.Movement.y * character.PushingSpeed * deltaTime);
+
+            Vector3 position = character.transform.position;
+            Vector3 forward = player.transform.forward;
+            position += forward * playerInput.Movement.y * character.PushingSpeed * deltaTime;
+            character.Rigidbody.MovePosition(position);
         }
-
-
     }
 
     public override void StateEnd()
     {
-
+        //Debug.Log(character.name + " exiting pushing state");
     }
 
     private void Move(float deltaTime)
     {
-        float speed = isSneaking ? character.SneakSpeed : isRunning ? character.RunSpeed : character.WalkSpeed;
+        float speed = character.PushingSpeed;
         Vector3 position = character.transform.position;
         //position.x += movement.x * speed * deltaTime;
         //position.z += movement.y * speed * deltaTime;
@@ -109,7 +119,7 @@ public class CS_Pushing : CharacterState
         Vector3 forward = player.CamFoward - player.transform.position;
         Vector3 right = player.CamRight - player.transform.position;
         position += forward * playerInput.Movement.y * speed * deltaTime
-            + right * playerInput.Movement.x * speed * deltaTime;
+            /*+ right * playerInput.Movement.x * speed * deltaTime*/;
         //FaceDirection(forward, deltaTime);
         character.Rigidbody.MovePosition(position);
     }

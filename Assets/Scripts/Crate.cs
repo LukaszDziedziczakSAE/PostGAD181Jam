@@ -40,14 +40,18 @@ public class Crate : MonoBehaviour
 
     public void Move(float amount)
     {
+        Vector3 position = transform.position;
         if (axisOfMovement == EAxisOfMovement.xAxis)
         {
-            
+            if (forward) position += (new Vector3(1, 0 ,0) * amount);
+            else position += (new Vector3(-1, 0, 0) * amount);
         }
         else if (axisOfMovement == EAxisOfMovement.zAxis)
         {
-            
+            if (forward) position += (new Vector3(0, 0, 1) * amount);
+            else position += (new Vector3(0, 0, -1) * amount);
         }
+        transform.position = position;
     }
 
     private void SetDirection(Player player)

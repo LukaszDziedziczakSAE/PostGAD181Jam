@@ -10,7 +10,7 @@ public class AIS_Gaurding : AI_State
 
     public override void StateStart()
     {
-        enemy.StatusIndicator.Hide();
+        if (enemy.StatusIndicator != null) enemy.StatusIndicator.Hide();
         enemy.AI.Hearing.OnHearFootstep += OnHearFootstep;
         enemy.AI.Sight.OnSeePlayer += OnSeePlayer;
         enemy.NavMeshAgent.speed = enemy.WalkSpeed;

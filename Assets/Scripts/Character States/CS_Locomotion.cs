@@ -40,7 +40,7 @@ public class CS_Locomotion : CharacterState
         }
         else character.Animator.CrossFadeInFixedTime(Locomotion_Unarmed, CrossFadeDuration);
 
-        if (playerInput == null) Debug.LogError("Missing player input");
+        //if (playerInput == null) Debug.LogError("Missing player input");
     }
 
     public override void Tick(float deltaTime)
