@@ -38,7 +38,8 @@ public class CS_Locomotion : CharacterState
                 character.Animator.CrossFadeInFixedTime(Locomotion_Unarmed, CrossFadeDuration);
             }
         }
-        
+
+        if (playerInput == null) Debug.LogError("Missing player input");
     }
 
     public override void Tick(float deltaTime)
@@ -71,6 +72,11 @@ public class CS_Locomotion : CharacterState
         {
             character.SetNewState(new CS_Sneaking(character));
         }
+
+        if (playerInput != null)
+        {
+            Game.CameraController.Rotate(-playerInput.Look.x);
+        }
     }
 
     public override void FixedTick(float deltaTime)
@@ -80,10 +86,7 @@ public class CS_Locomotion : CharacterState
             Move(deltaTime);
         }
 
-        if (playerInput != null)
-        {
-            Game.CameraController.Rotate(-playerInput.Look.x);
-        }
+        
     }
 
     public override void StateEnd()
