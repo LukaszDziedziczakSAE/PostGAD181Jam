@@ -11,6 +11,7 @@ public class CS_Pushing : CharacterState
     private readonly int Pushing = Animator.StringToHash("Pushing");
     private const float AnimatorDampTime = 0.1f;
     private const float CrossFadeDuration = 0.1f;
+    private Crate crate;
 
 
     public CS_Pushing(Character character, Crate crate) : base(character)
@@ -20,11 +21,11 @@ public class CS_Pushing : CharacterState
             this.player = player;
             playerInput = player.Input;
         }
-        else if (character.TryCast<Enemy>(out Enemy enemy))
+        /*else if (character.TryCast<Enemy>(out Enemy enemy))
         {
             ai = enemy.AI;
-        }
-
+        }*/
+        this.crate = crate;
     }
 
     public override void StateStart()
@@ -32,6 +33,8 @@ public class CS_Pushing : CharacterState
         character.Animator.CrossFadeInFixedTime(Pushing, CrossFadeDuration);
 
         if (playerInput == null) Debug.LogError("Missing player input");
+
+        character.transform.eulerAngles = new Vector3 (character.transform.eulerAngles.x, crate.PlayerFaceDirection, character.transform.eulerAngles.y);
     }
 
     public override void Tick(float deltaTime)

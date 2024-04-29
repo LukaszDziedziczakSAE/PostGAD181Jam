@@ -62,11 +62,21 @@ public class Crate : MonoBehaviour
         }
     }
 
-    private float PlayerFaceDirection
+    public float PlayerFaceDirection
     {
         get
         {
-
+            if (axisOfMovement == EAxisOfMovement.xAxis)
+            {
+                if (forward) return 90;
+                else return (90 * 3);
+            }
+            else if (axisOfMovement == EAxisOfMovement.zAxis)
+            {
+                if (forward) return 0;
+                else return 180f;
+            }
+            else return 0;
         }
     }
 }
