@@ -25,6 +25,10 @@ public class WeaponManager : MonoBehaviour
         if (Index != -1) DespawnWeapon();
 
         Index = index;
+
+        if (CurrentWeaponConfig.WeaponPrefab == null) Debug.LogError("Missing weaponPrefab");
+        if (character.RightHand == null) Debug.LogError(character.name + " Missing Right Hand referance");
+
         CurrentWeapon = Instantiate(CurrentWeaponConfig.WeaponPrefab, character.RightHand);
         CurrentWeapon.Initilise(CurrentWeaponConfig);
     }

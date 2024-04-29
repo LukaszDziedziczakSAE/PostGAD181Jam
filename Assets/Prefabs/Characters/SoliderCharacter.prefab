@@ -3561,7 +3561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cc9797e5c8a634f91b7d43c53b52d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  character: {fileID: 1284752076607542377}
   <Weapons>k__BackingField:
   - {fileID: 11400000, guid: 9e140783ad657c14db52697e7e87a230, type: 2}
   <Index>k__BackingField: -1

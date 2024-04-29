@@ -78,6 +78,11 @@ public class CS_Locomotion : CharacterState
         {
             Game.CameraController.Rotate(-playerInput.Look.x);
         }
+
+        Vector3 rotation = character.transform.eulerAngles;
+        rotation.z = 0;
+        rotation.x = 0;
+        character.transform.eulerAngles = rotation;
     }
 
     public override void FixedTick(float deltaTime)
