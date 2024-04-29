@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
+    [SerializeField] EAxisOfMovement axisOfMovement;
     bool characterEntered;
 
     public enum EAxisOfMovement

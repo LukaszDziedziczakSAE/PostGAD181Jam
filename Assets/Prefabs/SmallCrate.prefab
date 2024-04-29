@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1364180136979562659}
   - component: {fileID: 321550673244708933}
   - component: {fileID: 6797356315014973052}
+  - component: {fileID: 5629829551114507240}
+  - component: {fileID: 872611307660835403}
   m_Layer: 0
   m_Name: SmallCrate
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1817319276091134228}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.753769, y: -0.00000047683716, z: 4.286039}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -106,3 +108,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43187961264276760, guid: 49b50ff6e6e20e34ab1a193c181c4b94, type: 2}
+--- !u!114 &5629829551114507240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817319276091134228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032328ca5f0592b4d9dad95ff8c8ab67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisOfMovement: 0
+--- !u!65 &872611307660835403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817319276091134228}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9082465, y: 0.48350412, z: 0.81122106}
+  m_Center: {x: -0.00018174946, y: 0.24175206, z: -0.01827392}
