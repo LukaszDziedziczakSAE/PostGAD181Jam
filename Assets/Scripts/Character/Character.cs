@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
     [field: SerializeField] public float RunSpeed { get; private set; } = 10f;
     [field: SerializeField] public float SneakSpeed { get; private set; } = 10f;
     [field: SerializeField] public float RotationDamping { get; private set; } = 0.5f;
+    [field: SerializeField] public float PushingSpeed { get; private set; } = 4f;
 
     public Vector3 Position => transform.position;
     System.Type aimingStateType;
