@@ -46,3 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   cameraController: {fileID: 0}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  groundRaycastHeight: 5

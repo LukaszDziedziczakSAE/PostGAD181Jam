@@ -9,8 +9,15 @@ public class Game : MonoBehaviour
 
     [SerializeField] Player Player;
     [SerializeField] CameraController cameraController;
+    [SerializeField] LayerMask groundLayers;
+    [SerializeField] float groundRaycastHeight;
+    [SerializeField] float minFallHeight = 0.5f;
 
     float timer;
+
+    public static LayerMask GroundLayers => Instance.groundLayers;
+    public static float GroundRaycastHeight => Instance.groundRaycastHeight;
+    public static float MinFallHeight => Instance.minFallHeight;
 
     private void Awake()
     {

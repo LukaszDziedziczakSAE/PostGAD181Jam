@@ -110,12 +110,10 @@ public class CS_Locomotion : CharacterState
         Vector3 forward = player.CamFoward - player.transform.position;
         Vector3 right = player.CamRight - player.transform.position;
 
-        forward.y = character.transform.position.y;
-        right.y = character.transform.position.y;
-
         position += forward * playerInput.Movement.y * speed * deltaTime 
             + right * playerInput.Movement.x * speed * deltaTime;
         FaceDirection(forward, deltaTime);
+        position = CorrectGroundPosition(position);
         character.Rigidbody.MovePosition(position);
     }
 
@@ -172,4 +170,20 @@ public class CS_Locomotion : CharacterState
         }
     }
 
+    private Vector3 CorrectGroundPosition(Vector3 position)
+    {
+        Vector3 newPosition = position;
+        Vector3 rayCastOrigin = new Vector3(position.x, position.y + Game.GroundRaycastHeight, position.z);
+        Vector3 raycastDirection = new Vector3(0, -1, 0);
+        //Debug.DrawLine(rayCastOrigin, rayCastOrigin + (raycastDirection * Game.GroundRaycastHeight * 2), Color.red);
+        //Debug.Log("raycast origin = " + rayCastOrigin);
+        if (Physics.Raycast(rayCastOrigin, raycastDirection, out RaycastHit hit, Game.GroundRaycastHeight * 2, Game.GroundLayers))
+        {
+            if (Vector3.Distance(newPosition, hit.point) < Game.MinFallHeight)
+                newPosition = hit.point;
+        }
+        else Debug.LogError("Ground raycast failed to hit ground");
+
+        return newPosition;
+    }
 }
