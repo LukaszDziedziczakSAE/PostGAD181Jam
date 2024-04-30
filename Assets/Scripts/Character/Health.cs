@@ -34,6 +34,11 @@ public class Health : MonoBehaviour
         {
             Death();
         }
+
+        if (character.GetComponent<Player>())
+        {
+            UI.HealthIndicator.UpdatePlayerHealth();
+        }
     }
 
     public void Heal(float amount)
