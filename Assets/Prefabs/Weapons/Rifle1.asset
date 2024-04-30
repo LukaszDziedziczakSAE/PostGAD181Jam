@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <WeaponPrefab>k__BackingField: {fileID: -5779912274463793702, guid: 9857694799f9ffb4cbccb755f0974dc8,
     type: 3}
-  <FireRate>k__BackingField: 0.1
+  <FireRate>k__BackingField: 3
   <Damage>k__BackingField: 10
   <SpawnPosition>k__BackingField: {x: 12.2, y: 6, z: -7.9}
   <SpawnRotation>k__BackingField: {x: 352.10953, y: 65.32654, z: 290.9955}
