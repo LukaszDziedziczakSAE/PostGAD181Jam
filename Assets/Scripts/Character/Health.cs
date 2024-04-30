@@ -8,6 +8,9 @@ public class Health : MonoBehaviour
     [SerializeField] float maxHealth;
     [SerializeField] float currentHealth;
 
+    public float CurrentHealth => currentHealth;
+    public float HealthPercentage => currentHealth / maxHealth;
+
     private void Start()
     {
         ResetHealth();
