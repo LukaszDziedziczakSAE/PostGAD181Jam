@@ -16,7 +16,7 @@ public class AIS_Engaging : AI_State
 
     public override void StateStart()
     {
-        enemy.StatusIndicator.Show(true);
+        if (enemy.StatusIndicator != null) enemy.StatusIndicator.Show(true);
         enemy.NavMeshAgent.speed = enemy.RunSpeed;
         enemy.AI.SetTarget(target);
         lastBustTime = Time.time - enemy.BurstRate;

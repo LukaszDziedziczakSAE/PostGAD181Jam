@@ -58,10 +58,10 @@ public class CS_Aiming : CharacterState
     public override void StateEnd()
     {
         character.WeaponManager.CurrentWeapon.OnFire -= OnWeaponFired;
-        if (character.WeaponManager.WeaponSpwaned)
+        /*if (character.WeaponManager.WeaponSpwaned)
         {
             character.Animator.CrossFadeInFixedTime(RifleAimToDown, CrossFadeDuration);
-        }
+        }*/
     }
 
     private Vector2 movement

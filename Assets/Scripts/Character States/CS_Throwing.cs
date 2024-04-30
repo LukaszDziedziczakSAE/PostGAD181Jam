@@ -9,17 +9,21 @@ public class CS_Throwing : CharacterState
 
     public CS_Throwing(Character character) : base(character)
     {
-        character.Animator.CrossFadeInFixedTime(Throw, CrossFadeDuration);
+        
     }
 
     public override void StateStart()
     {
-
+        character.Animator.CrossFadeInFixedTime(Throw, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
     {
-
+        if (character.Animator.GetCurrentAnimatorStateInfo(0).IsTag("Throw") 
+            && character.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+        {
+            character.SetNewState(new CS_Locomotion(character));
+        }
     }
 
     public override void FixedTick(float deltaTime)
