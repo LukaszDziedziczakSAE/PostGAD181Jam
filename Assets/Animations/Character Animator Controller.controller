@@ -47,7 +47,10 @@ AnimatorStateMachine:
     m_Position: {x: 150, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1485292369274520083}
-    m_Position: {x: 260, y: 440, z: 0}
+    m_Position: {x: 270, y: 370, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 4594123131273846247}
+    m_Position: {x: 450, y: 440, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -136,7 +139,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 4f6b31f05eb55b94c94831b801461889,
+    m_Motion: {fileID: -203655887218126122, guid: 67056f7418ada8a40973757d1b1b8a31,
       type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
@@ -145,7 +148,7 @@ BlendTree:
     m_DirectBlendParameter: forward
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 687e9f02eda70d449b95634a01479c37,
+    m_Motion: {fileID: -203655887218126122, guid: 76d9501abba5f574691374924da1e5be,
       type: 3}
     m_Threshold: 0.2
     m_Position: {x: 0, y: 1}
@@ -154,7 +157,7 @@ BlendTree:
     m_DirectBlendParameter: forward
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 06cce46c88ae4e641bd21f1aea881ab5,
+    m_Motion: {fileID: -203655887218126122, guid: a4e8d0667b369204baf12303a8cbbbaf,
       type: 3}
     m_Threshold: 0.4
     m_Position: {x: 0, y: -1}
@@ -181,7 +184,7 @@ BlendTree:
     m_DirectBlendParameter: forward
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: e78662f55c3a13b4187a17a79aac89c5,
+    m_Motion: {fileID: -203655887218126122, guid: a85ab7ade4da1244ab204f8678a3a792,
       type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 2}
@@ -342,6 +345,33 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -6741124005715936628}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &4594123131273846247
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RifleAimIdle
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -203655887218126122, guid: f5fc3236ea91d09479c037567288a234,
+    type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
