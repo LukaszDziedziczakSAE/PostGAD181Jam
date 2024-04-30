@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bottle : MonoBehaviour
@@ -10,16 +11,20 @@ public class Bottle : MonoBehaviour
     [SerializeField] Vector3 spawnRotation;
     [SerializeField] Rigidbody rb;
     [SerializeField] Collider _collider;
+    [SerializeField] ParticleSystem smashPrefab;
+    
 
     public enum EMode
     {
         Pickup,
         Throwing,
-        InFight
+        InFlight
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "DoNotHit")return;
+      
         if (mode == EMode.Pickup)
         {
             Player player = other.GetComponent<Player>();
@@ -28,6 +33,13 @@ public class Bottle : MonoBehaviour
                 player.Inventory.AddBottleToInventory();
                 Destroy(gameObject);
             }
+        }
+        if(mode== EMode.InFlight)
+        {
+
+            Debug.Log("bottle hit " + other.gameObject.name);
+            ParticleSystem smash = Instantiate(smashPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
         
     }
@@ -43,7 +55,7 @@ public class Bottle : MonoBehaviour
 
     public void SetModeInFlight(Vector3 newVelocity)
     {
-        mode = EMode.InFight;
+        mode = EMode.InFlight;
         _collider.enabled = true;
         transform.parent = null;
 
