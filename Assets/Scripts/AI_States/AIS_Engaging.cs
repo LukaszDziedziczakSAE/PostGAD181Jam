@@ -7,7 +7,7 @@ public class AIS_Engaging : AI_State
     Character target;
     float lastBustTime;
     float burstIndex;
-
+    Vector3 targetPosition;
 
     public AIS_Engaging(Enemy enemy, Character target) : base(enemy)
     {
@@ -25,6 +25,21 @@ public class AIS_Engaging : AI_State
 
     public override void Tick(float deltaTime)
     {
+        if (enemy.AI.Sight.HasLineOfight(target))
+        {
+            targetPosition = target.Position;
+
+        }
+        else if (targetPosition != Vector3.zero)
+        {
+            enemy.AI.SetNewState(new AIS_Investigating(enemy, targetPosition));
+        }
+        else
+        {
+            enemy.WeaponManager.CurrentWeapon.TriggerPulled = false;
+            enemy.AI.ResetToStartingState();
+        }
+
         //Debug.Log("distanceToTarget = " + distanceToTarget.ToString("F2") + ", enemy.EngagmentRange = " + enemy.EngagmentRange);
         if (distanceToTarget > enemy.EngagmentRange)
         {
@@ -61,12 +76,16 @@ public class AIS_Engaging : AI_State
                 enemy.WeaponManager.CurrentWeapon.TriggerPulled = false;
                 enemy.AI.ResetToStartingState();
             }
+
+            
         }
+
+
     }
 
     public override void StateEnd()
     {
-        enemy.StatusIndicator.Hide();
+        if (enemy.StatusIndicator != null) enemy.StatusIndicator.Hide();
         enemy.AI.ClearTarget();
         enemy.WeaponManager.CurrentWeapon.OnFire -= OnWeaponFire;
         enemy.WeaponManager.CurrentWeapon.TriggerPulled = false;

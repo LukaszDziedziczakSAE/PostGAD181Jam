@@ -14,7 +14,7 @@ public class AIS_Investigating : AI_State
 
     public override void StateStart()
     {
-        enemy.StatusIndicator.Show(false);
+        if (enemy.StatusIndicator != null) enemy.StatusIndicator.Show(false);
         enemy.AI.Sight.OnSeePlayer += OnSeePlayer;
         enemy.AI.Hearing.OnHearFootstep += OnHearFootstep;
         SetNevMeshAgent();
@@ -33,7 +33,7 @@ public class AIS_Investigating : AI_State
     
     public override void StateEnd()
     {
-        enemy.StatusIndicator.Hide();
+        if (enemy.StatusIndicator != null) enemy.StatusIndicator.Hide();
         enemy.AI.Sight.OnSeePlayer -= OnSeePlayer;
         enemy.AI.Hearing.OnHearFootstep -= OnHearFootstep;
     }
