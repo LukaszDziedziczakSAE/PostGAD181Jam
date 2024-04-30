@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5981251741308326826}
   - component: {fileID: 1364180136979562659}
   - component: {fileID: 321550673244708933}
-  - component: {fileID: 6797356315014973052}
   - component: {fileID: 5629829551114507240}
   - component: {fileID: 872611307660835403}
   - component: {fileID: 3867489651744849230}
+  - component: {fileID: 49561172032282624}
   m_Layer: 0
   m_Name: SmallCrate
   m_TagString: Untagged
@@ -87,28 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6797356315014973052
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817319276091134228}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43187961264276760, guid: 49b50ff6e6e20e34ab1a193c181c4b94, type: 2}
 --- !u!114 &5629829551114507240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +149,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &49561172032282624
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817319276091134228}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0277975, y: 0.50191134, z: 0.5970768}
+  m_Center: {x: 0.00000008940697, y: 0.25095567, z: 0}

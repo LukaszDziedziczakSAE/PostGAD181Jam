@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CS_Locomotion : CharacterState
@@ -42,6 +43,16 @@ public class CS_Locomotion : CharacterState
         else character.Animator.CrossFadeInFixedTime(Locomotion_Unarmed, CrossFadeDuration);
 
         //if (playerInput == null) Debug.LogError("Missing player input");
+
+        if (playerInput != null)
+        {
+            playerInput.OnAttackPress += PlayerInput_OnAttackPress;
+        }
+    }
+
+    private void PlayerInput_OnAttackPress()
+    {
+        player.SetNewState(new CS_Throwing(player));
     }
 
     public override void Tick(float deltaTime)
@@ -102,7 +113,10 @@ public class CS_Locomotion : CharacterState
 
     public override void StateEnd()
     {
-
+        if (playerInput != null)
+        {
+            playerInput.OnAttackPress -= PlayerInput_OnAttackPress;
+        }
     }
 
     private void Move(float deltaTime)
