@@ -10,6 +10,7 @@ public class Player : Character
 
     [field: SerializeField] public Footsteps Footsteps { get; private set; }
     [field: SerializeField] public PlayerInventory Inventory { get; private set; }
+    [field: SerializeField] public BottleThrower BottleThrower { get; private set; }
     private void Awake()
     {
         if (Player.Instance == null) Instance = this;

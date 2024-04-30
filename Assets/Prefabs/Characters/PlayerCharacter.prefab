@@ -2194,6 +2194,8 @@ GameObject:
   - component: {fileID: 2073934979601789845}
   - component: {fileID: 21381890256665771}
   - component: {fileID: 2898861561543528232}
+  - component: {fileID: 1038440207769751339}
+  - component: {fileID: 3817176294404861904}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -2354,6 +2356,7 @@ MonoBehaviour:
   <Input>k__BackingField: {fileID: 21381890256665771}
   <Footsteps>k__BackingField: {fileID: 0}
   <Inventory>k__BackingField: {fileID: 2898861561543528232}
+  <BottleThrower>k__BackingField: {fileID: 3817176294404861904}
 --- !u!114 &21381890256665771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,6 +2388,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <BottlesCollected>k__BackingField: 0
+--- !u!114 &1038440207769751339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193048857746103039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1b92c4901b3c24290680501da80087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 2073934979601789845}
+  impact: {fileID: 0}
+  impactDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &3817176294404861904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193048857746103039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68e5e0babe53134b8e4dcc70346347a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2073934979601789845}
 --- !u!1 &3211844582959791903
 GameObject:
   m_ObjectHideFlags: 0
