@@ -20,4 +20,9 @@ public class UI : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(this.gameObject);
     }
+
+    private void Start()
+    {
+        blackscreen.gameObject.SetActive(true);
+    }
 }

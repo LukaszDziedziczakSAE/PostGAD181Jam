@@ -21,6 +21,8 @@ public class AIS_Engaging : AI_State
         enemy.AI.SetTarget(target);
         lastBustTime = Time.time - enemy.BurstRate;
         enemy.WeaponManager.CurrentWeapon.OnFire += OnWeaponFire;
+
+        Debug.Log(enemy.name + " is engaging " + target.name);
     }
 
     public override void Tick(float deltaTime)
@@ -32,6 +34,7 @@ public class AIS_Engaging : AI_State
         }
         else if (targetPosition != Vector3.zero)
         {
+            Debug.Log("Lost line of sight");
             enemy.AI.SetNewState(new AIS_Investigating(enemy, targetPosition));
         }
         else

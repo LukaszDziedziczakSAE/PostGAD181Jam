@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     [SerializeField] LayerMask groundLayers;
     [SerializeField] float groundRaycastHeight;
     [SerializeField] float minFallHeight = 0.5f;
+    [SerializeField] float timeToRespawnAfterDeath = 2f;
 
     float timer;
 
@@ -29,7 +30,7 @@ public class Game : MonoBehaviour
     {
         if (!Player.Health.IsAlive) timer += Time.deltaTime;
 
-        if (timer >= 2.5 && UI.Blackscreen.IsClear)
+        if (timer >= timeToRespawnAfterDeath && UI.Blackscreen.IsClear)
         {
             BeginLevelReset();
         }

@@ -42,7 +42,7 @@ public class Weapon : MonoBehaviour
         {
             foreach(RaycastHit hit in hits)
             {
-                Debug.Log(character.name + " hit " + hit.collider.name);
+                //Debug.Log(character.name + " hit " + hit.collider.name);
 
                 if (hit.collider.TryGetComponent<Character>(out Character hitCharacter))
                 {

@@ -17,6 +17,7 @@ public class Footsteps : MonoBehaviour
 
     private void WalkStep()
     {
+        //Debug.Log(player.name + " footstep");
         OnWalkStep?.Invoke(player.Position);
         player.SFX_Footstep.PlayFootstepSound();
     }

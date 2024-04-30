@@ -4607,9 +4607,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ai: {fileID: 2153867371434918267}
-  walkingHearingRange: 5
-  runningHearingRange: 10
-  firearmHearingRange: 20
+  walkingHearingRange: 8
+  runningHearingRange: 12
+  firearmHearingRange: 15
 --- !u!114 &1813104207517465734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4623,9 +4623,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ai: {fileID: 2153867371434918267}
-  sightRange: 20
-  sightAngle: 40
-  gizmoLines: 40
+  sightRange: 16
+  sightAngle: 90
+  gizmoLines: 90
   characterLayer:
     serializedVersion: 2
     m_Bits: 0

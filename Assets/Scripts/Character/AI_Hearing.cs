@@ -34,6 +34,7 @@ public class AI_Hearing : MonoBehaviour
     {
         if (Distance(postion) <= walkingHearingRange)
         {
+            //Debug.Log(ai.Enemy.name + " heard footstep at " + postion.ToString());
             OnHearFootstep?.Invoke(postion);
         }
 

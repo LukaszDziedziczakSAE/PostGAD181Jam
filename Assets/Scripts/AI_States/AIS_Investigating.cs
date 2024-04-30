@@ -6,6 +6,9 @@ using UnityEngine;
 public class AIS_Investigating : AI_State
 {
     Vector3 soundPosition;
+    float proximity = 1f;
+    float investigationTime = 3f;
+    float timer;
 
     public AIS_Investigating(Enemy enemy, Vector3 soundPosition) : base(enemy)
     {
@@ -25,10 +28,20 @@ public class AIS_Investigating : AI_State
         {
             enemy.SetNewState(new CS_Locomotion(enemy));
         }
+
+        timer = 0f;
+
+        Debug.Log(enemy.name + " starting investigation");
     }
 
     public override void Tick(float deltaTime)
     {
+        if (InProximityToDestination) timer += deltaTime;
+
+        if (timer > investigationTime)
+        {
+            enemy.AI.ResetToStartingState();
+        }
     }
     
     public override void StateEnd()
@@ -47,6 +60,7 @@ public class AIS_Investigating : AI_State
     {
         //enemy.AI.SetNewState(new AIS_Investigating(enemy, soundPosition));
         this.soundPosition = soundPosition;
+        timer = 0;
         SetNevMeshAgent();
     }
 
@@ -55,4 +69,11 @@ public class AIS_Investigating : AI_State
         enemy.NavMeshAgent.SetDestination(soundPosition);
     }
 
+    private bool InProximityToDestination
+    {
+        get
+        {
+            return Vector3.Distance(soundPosition, enemy.Position) < proximity;
+        }
+    }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 /// <summary>
@@ -23,6 +24,8 @@ public class AIS_Patroling : AI_State
         {
             enemy.SetNewState(new CS_Locomotion(enemy));
         }
+
+        Debug.Log(enemy.name + " starting patrol");
     }
 
     public override void Tick(float deltaTime)
@@ -35,18 +38,12 @@ public class AIS_Patroling : AI_State
         else if (!enemy.PartolManager.IsWaiting && enemy.NavMeshAgent.destination != enemy.PartolManager.CurrentWaypoint.Position)
         {
             enemy.NavMeshAgent.SetDestination(enemy.PartolManager.CurrentWaypoint.Position);
-            //enemy.AI.SetLocomotion(enemy.PartolManager.CurrentWaypointDirectionNormalised);
-            //enemy.NavMeshAgent.SetDestination(enemy.PartolManager.CurrentWaypoint.Position);
-            //enemy.NavMeshAgent.isStopped = false;
         }
-        else if (enemy.PartolManager.IsWaiting /*&& enemy.NavMeshAgent.destination != enemy.Position*/)
+        else if (enemy.PartolManager.IsWaiting)
         {
             enemy.NavMeshAgent.destination = enemy.Position;
-            //enemy.AI.ClearLocomotion();
-            //enemy.NavMeshAgent.isStopped = true;
-        }
 
-        //Debug.Log("Distance to waypoint " + enemy.PartolManager.DistanceToCurrentWaypoint);
+        }
     }
 
     public override void StateEnd()
@@ -59,6 +56,7 @@ public class AIS_Patroling : AI_State
 
     private void OnHearFootstep(Vector3 soundPosition)
     {
+        Debug.Log(enemy.name + " heard footstep at " + soundPosition.ToString());
         enemy.AI.SetNewState(new AIS_Investigating(enemy, soundPosition));
     }
 
