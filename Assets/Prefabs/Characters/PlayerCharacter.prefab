@@ -2197,6 +2197,7 @@ GameObject:
   - component: {fileID: 1038440207769751339}
   - component: {fileID: 3817176294404861904}
   - component: {fileID: 7674652438081582086}
+  - component: {fileID: 171928816595726767}
   m_Layer: 6
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -2347,7 +2348,7 @@ MonoBehaviour:
   <RightHand>k__BackingField: {fileID: 346828644490790742}
   <SFX_Footstep>k__BackingField: {fileID: 0}
   <Health>k__BackingField: {fileID: 438175268343061657}
-  <Combat>k__BackingField: {fileID: 0}
+  <Combat>k__BackingField: {fileID: 171928816595726767}
   <Ragdoll>k__BackingField: {fileID: 0}
   <WalkSpeed>k__BackingField: 5
   <RunSpeed>k__BackingField: 10
@@ -2419,6 +2420,7 @@ MonoBehaviour:
   player: {fileID: 2073934979601789845}
   bottlePrefab: {fileID: 4839775334136019597, guid: e0038c09dee58e74cb687e5147089479,
     type: 3}
+  throwForce: 10
 --- !u!114 &7674652438081582086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2431,6 +2433,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41aae3cb939415e4d984e7d6bb962399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &171928816595726767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193048857746103039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1b92c4901b3c24290680501da80087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 2073934979601789845}
+  impact: {fileID: 1843719469284452, guid: 582366dd04f1f604d8f75e4e55c89f3e, type: 3}
+  impactDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &3211844582959791903
 GameObject:
   m_ObjectHideFlags: 0
