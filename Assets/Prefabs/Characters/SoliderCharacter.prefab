@@ -336,6 +336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3850346174566432380}
   - component: {fileID: 3339800085158505668}
+  - component: {fileID: 5829863902964120995}
   m_Layer: 6
   m_Name: Character_Soldier_Male_01
   m_TagString: Untagged
@@ -460,6 +461,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 87.321846, z: -4.8875113}
     m_Extent: {x: 102.582306, y: 97.43119, z: 25.372116}
   m_DirtyAABB: 0
+--- !u!114 &5829863902964120995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105525614655843793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a1160796e9076418e11ab1881ee5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1284752076607542377}
 --- !u!1 &1226608966439404733
 GameObject:
   m_ObjectHideFlags: 0

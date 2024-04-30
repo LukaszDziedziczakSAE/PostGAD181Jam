@@ -2841,6 +2841,7 @@ GameObject:
   - component: {fileID: 7674652438081582086}
   - component: {fileID: 171928816595726767}
   - component: {fileID: 5718034464543922624}
+  - component: {fileID: 9126415557028628340}
   m_Layer: 6
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -3003,6 +3004,7 @@ MonoBehaviour:
   <Footsteps>k__BackingField: {fileID: 7674652438081582086}
   <Inventory>k__BackingField: {fileID: 2898861561543528232}
   <BottleThrower>k__BackingField: {fileID: 3817176294404861904}
+  <Targeting>k__BackingField: {fileID: 9126415557028628340}
 --- !u!114 &21381890256665771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3128,6 +3130,19 @@ MonoBehaviour:
   - {fileID: 3863209827421726710}
   - {fileID: 596596664353367238}
   - {fileID: 5927646865010189672}
+--- !u!114 &9126415557028628340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193048857746103039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2638295e93a654b8d10ead18ba6c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetingRange: 20
 --- !u!1 &3211844582959791903
 GameObject:
   m_ObjectHideFlags: 0

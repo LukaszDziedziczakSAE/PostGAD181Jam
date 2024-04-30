@@ -20,6 +20,7 @@ public class AI_Sight : MonoBehaviour
     private void Update()
     {
         //Debug.Log("Angle to player = " + AngleToCharacter(Player.Instance));
+        if (!ai.Enemy.Health.IsAlive) return;
         CheckCharactersInSight();
     }
 

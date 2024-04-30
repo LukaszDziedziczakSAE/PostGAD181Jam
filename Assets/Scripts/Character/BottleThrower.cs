@@ -19,8 +19,15 @@ public class BottleThrower : MonoBehaviour
 
     public void Throw()
     {
-        //Debug.Log("Throw called");
-        bottle.SetModeInFlight((player.transform.forward + (player.transform.up / 2) )* throwForce);
+        if (player.Targeting.HasTarget)
+        {
+            bottle.SetModeTargeted(player.Targeting.Target);
+        }
+        else
+        {
+            bottle.SetModeInFlight((player.transform.forward + (player.transform.up / 2)) * throwForce);
+        }
+        
         bottle = null;
     }
 }

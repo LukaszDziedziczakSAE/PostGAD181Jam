@@ -8395,7 +8395,7 @@ PrefabInstance:
     - target: {fileID: 6298338034348554367, guid: 147e80aba28b7d342a4f2e3e599dfccf,
         type: 3}
       propertyPath: m_Name
-      value: SoliderCharacter (3)
+      value: SoliderCharacter 4
       objectReference: {fileID: 0}
     - target: {fileID: 7484018253011627176, guid: 147e80aba28b7d342a4f2e3e599dfccf,
         type: 3}
@@ -14131,7 +14131,7 @@ PrefabInstance:
     - target: {fileID: 6298338034348554367, guid: 147e80aba28b7d342a4f2e3e599dfccf,
         type: 3}
       propertyPath: m_Name
-      value: SoliderCharacter (1)
+      value: SoliderCharacter 2
       objectReference: {fileID: 0}
     - target: {fileID: 7484018253011627176, guid: 147e80aba28b7d342a4f2e3e599dfccf,
         type: 3}
@@ -15907,7 +15907,7 @@ PrefabInstance:
     - target: {fileID: 6298338034348554367, guid: 147e80aba28b7d342a4f2e3e599dfccf,
         type: 3}
       propertyPath: m_Name
-      value: SoliderCharacter (2)
+      value: SoliderCharacter 3
       objectReference: {fileID: 0}
     - target: {fileID: 7484018253011627176, guid: 147e80aba28b7d342a4f2e3e599dfccf,
         type: 3}
@@ -21020,7 +21020,7 @@ PrefabInstance:
     - target: {fileID: 6298338034348554367, guid: 147e80aba28b7d342a4f2e3e599dfccf,
         type: 3}
       propertyPath: m_Name
-      value: SoliderCharacter
+      value: SoliderCharacter 1
       objectReference: {fileID: 0}
     - target: {fileID: 7484018253011627176, guid: 147e80aba28b7d342a4f2e3e599dfccf,
         type: 3}

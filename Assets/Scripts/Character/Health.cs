@@ -51,12 +51,14 @@ public class Health : MonoBehaviour
     private void Death()
     {
         //character.Animator.enabled = false;
-        character.Animator.SetTrigger("death");
+        //character.Animator.SetTrigger("death");
         character.CapsuleCollider.enabled = false;
         character.Rigidbody.useGravity = false;
         /*character.Ragdoll.CollidersEnabled(true);
         character.Ragdoll.RidibodyClear();
         character.Ragdoll.AddForce(Vector3.up * 20 + -character.Combat.impactDirection * 50);
         character.Rigidbody.AddForce(Vector3.up * 20 + -character.Combat.impactDirection * 50);*/
+
+        character.SetNewState(new CS_Death(character));
     }
 }

@@ -40,6 +40,7 @@ public class AI : MonoBehaviour
 
     private void Update()
     {
+        if (!Enemy.Health.IsAlive) return;
         if (State != null) State.Tick(Time.deltaTime);
     }
 

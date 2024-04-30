@@ -12,18 +12,36 @@ public class Bottle : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] Collider _collider;
     [SerializeField] ParticleSystem smashPrefab;
-    
+    [SerializeField] float homingSpeed;
+    [SerializeField] float damage = 100;
+
+    Enemy target;
 
     public enum EMode
     {
         Pickup,
         Throwing,
-        InFlight
+        InFlight,
+        Homing
+    }
+
+    private void Update()
+    {
+        if (mode == EMode.Homing)
+        {
+            Vector3 targetPosition = new Vector3(target.Position.x, target.Position.y + 1.6f, target.Position.z);
+            Vector3 direction = (targetPosition - transform.position).normalized;
+            Vector3 position = transform.position;
+            position += direction * homingSpeed * Time.deltaTime;
+            transform.position = position;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "DoNotHit")return;
+
+        if (Time.time > 0.5f) Debug.Log(name + " hit " + other.gameObject.name);
       
         if (mode == EMode.Pickup)
         {
@@ -34,14 +52,30 @@ public class Bottle : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if(mode== EMode.InFlight)
+
+        else if (mode == EMode.InFlight)
         {
 
             //Debug.Log("bottle hit " + other.gameObject.name);
             ParticleSystem smash = Instantiate(smashPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        
+
+        else if (mode == EMode.Homing)
+        {
+            Health health = other.gameObject.GetComponent<Health>();
+            if (health == null) health = other.GetComponentInParent<Health>();
+
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+            }
+            else Debug.LogError(name + " did not find enemy on impact");
+            
+            ParticleSystem smash = Instantiate(smashPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+
     }
 
     public void SetModeThrowing(Player player)
@@ -60,5 +94,15 @@ public class Bottle : MonoBehaviour
         transform.parent = null;
 
         rb.velocity = newVelocity;
+    }
+
+    public void SetModeTargeted(Enemy enemy)
+    {
+        Debug.Log(name + " in targeting mode");
+        target = enemy;
+        mode = EMode.Homing;
+        _collider.enabled = true;
+        transform.parent = null;
+        rb.useGravity = false;
     }
 }
