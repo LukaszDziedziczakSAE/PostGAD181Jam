@@ -3587,10 +3587,10 @@ MonoBehaviour:
   <Health>k__BackingField: {fileID: 7782681699005980355}
   <Combat>k__BackingField: {fileID: 5694009421492793004}
   <Ragdoll>k__BackingField: {fileID: 0}
-  <WalkSpeed>k__BackingField: 1
+  <WalkSpeed>k__BackingField: 1.5
   <RunSpeed>k__BackingField: 5
   <SneakSpeed>k__BackingField: 10
-  <RotationDamping>k__BackingField: 10
+  <RotationDamping>k__BackingField: 12
   <PushingSpeed>k__BackingField: 4
   <AI>k__BackingField: {fileID: 2153867371434918267}
   <StartingMode>k__BackingField: 1
