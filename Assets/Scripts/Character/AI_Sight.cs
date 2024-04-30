@@ -11,6 +11,7 @@ public class AI_Sight : MonoBehaviour
     [SerializeField] private float sightRange;
     [SerializeField] private float sightAngle;
     [SerializeField] int gizmoLines;
+    [SerializeField] LayerMask characterLayer; 
 
     public bool SeePlayer {  get; private set; }
 
@@ -29,6 +30,7 @@ public class AI_Sight : MonoBehaviour
         foreach (Character character in ai.CharactersInRange)
         {
             if (!CharacterInSight(character)) return;
+            if (!HasLineOfight(character)) return;
 
             if (character.TryCast<Player>(out Player player) && player.Health.IsAlive)
             {
@@ -70,6 +72,20 @@ public class AI_Sight : MonoBehaviour
         return Vector3.Distance(transform.position, character.Position) <= sightRange &&
             AngleToCharacter(character) >= -(sightAngle / 2) &&
             AngleToCharacter(character) <= (sightAngle / 2); 
+    }
+
+    public bool HasLineOfight(Character character)
+    {
+        if (Vector3.Distance(character.Position, transform.position) > sightRange) return false;
+
+        Vector3 characterPosition = new Vector3(character.Position.x, transform.position.y, character.Position.z);
+        Debug.DrawLine(transform.position, (characterPosition - transform.position) * 50, Color.red, 5f);
+
+        if (Physics.Raycast(transform.position, characterPosition - transform.position, out RaycastHit hit, sightRange))
+        {
+            if (hit.collider.TryGetComponent<Character>(out Character hitCharacter) && hitCharacter == character) return true;
+        }
+        return false;
     }
 
     private float AngleToCharacter(Character character)
