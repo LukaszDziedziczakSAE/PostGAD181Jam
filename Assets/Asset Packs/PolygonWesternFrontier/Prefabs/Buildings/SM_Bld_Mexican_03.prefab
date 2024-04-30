@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23041504856571192}
   - component: {fileID: 64420018061297984}
   - component: {fileID: 4033586136251875995}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Bld_Mexican_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 33087976559438604}
   - component: {fileID: 23550280863010544}
   - component: {fileID: 65178099118296586}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Bld_Mexican_03_Door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
