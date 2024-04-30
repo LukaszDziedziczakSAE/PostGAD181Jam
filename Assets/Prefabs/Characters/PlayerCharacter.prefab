@@ -2403,7 +2403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 2073934979601789845}
-  impact: {fileID: 0}
+  impact: {fileID: 1843719469284452, guid: 582366dd04f1f604d8f75e4e55c89f3e, type: 3}
   impactDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &3817176294404861904
 MonoBehaviour:

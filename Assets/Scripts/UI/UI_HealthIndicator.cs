@@ -9,6 +9,7 @@ public class UI_HealthIndicator : MonoBehaviour
 
     public void UpdatePlayerHealth()
     {
-        healthIndicator.localScale = new Vector3(Player.Instance.Health.HealthPercentage, 0, 0);
+        //Debug.Log("Updating health to " + Player.Instance.Health.HealthPercentage.ToString("F2"));
+        healthIndicator.localScale = new Vector3(Player.Instance.Health.HealthPercentage, 1, 1);
     }
 }

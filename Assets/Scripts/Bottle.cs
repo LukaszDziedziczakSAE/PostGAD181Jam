@@ -37,7 +37,7 @@ public class Bottle : MonoBehaviour
         if(mode== EMode.InFlight)
         {
 
-            Debug.Log("bottle hit " + other.gameObject.name);
+            //Debug.Log("bottle hit " + other.gameObject.name);
             ParticleSystem smash = Instantiate(smashPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

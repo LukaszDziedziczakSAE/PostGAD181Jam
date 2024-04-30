@@ -34,14 +34,20 @@ public class Weapon : MonoBehaviour
         muzzleEffect?.Play();
         SFX?.PlayerFireSFX();
 
-        Ray ray = new Ray(muzzle.position, -muzzle.up * 50f);
-        Debug.DrawRay(muzzle.position, -muzzle.up * 50f, Color.red, 5);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 50f))
+        Ray ray = new Ray(muzzle.position, muzzle.forward);
+        Debug.DrawRay(muzzle.position, muzzle.forward * 50f, Color.red, 5);
+
+        RaycastHit[] hits = Physics.RaycastAll(ray, 50f);
+        if (hits.Length > 0)
         {
-            if (hit.collider.TryGetComponent<Character>(out Character character))
+            foreach(RaycastHit hit in hits)
             {
-                character.Combat.Hit(hit, muzzle.transform.position, config.Damage);
+                Debug.Log(character.name + " hit " + hit.collider.name);
+
+                if (hit.collider.TryGetComponent<Character>(out Character hitCharacter))
+                {
+                    hitCharacter.Combat.Hit(hit, muzzle.transform.position, config.Damage);
+                }
             }
         }
         else 
