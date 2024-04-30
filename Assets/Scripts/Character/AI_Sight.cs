@@ -32,6 +32,7 @@ public class AI_Sight : MonoBehaviour
 
             if (character.TryCast<Player>(out Player player) && player.Health.IsAlive)
             {
+                //Debug.Log(ai.Enemy.name + " Saw " + player.name);
                 OnSeePlayer?.Invoke(player);
             }
         }

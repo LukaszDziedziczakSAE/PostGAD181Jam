@@ -3587,13 +3587,13 @@ MonoBehaviour:
   <Health>k__BackingField: {fileID: 7782681699005980355}
   <Combat>k__BackingField: {fileID: 5694009421492793004}
   <Ragdoll>k__BackingField: {fileID: 0}
-  <WalkSpeed>k__BackingField: 5
-  <RunSpeed>k__BackingField: 10
+  <WalkSpeed>k__BackingField: 1
+  <RunSpeed>k__BackingField: 5
   <SneakSpeed>k__BackingField: 10
   <RotationDamping>k__BackingField: 0.5
   <PushingSpeed>k__BackingField: 4
   <AI>k__BackingField: {fileID: 2153867371434918267}
-  <StartingMode>k__BackingField: 0
+  <StartingMode>k__BackingField: 1
   <StartingPoint>k__BackingField: {x: 0, y: 0, z: 0}
   <PartolManager>k__BackingField: {fileID: 1609662098586068481}
   <NavMeshAgent>k__BackingField: {fileID: 1756283033978083943}
@@ -3613,7 +3613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c0daf473b20224a921d21f081ef4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  character: {fileID: 1284752076607542377}
   maxHealth: 20
   currentHealth: 0
 --- !u!114 &5694009421492793004
@@ -3628,7 +3628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1b92c4901b3c24290680501da80087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  character: {fileID: 1284752076607542377}
   impact: {fileID: 0}
   impactDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &1609662098586068481
@@ -3643,7 +3643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c4b1e56ef25594181af21d3945cb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 1284752076607542377}
   waypoints: []
   waypointProximity: 0.5
   index: -1
@@ -4552,6 +4552,7 @@ GameObject:
   - component: {fileID: 2153867371434918267}
   - component: {fileID: 7440431138943601821}
   - component: {fileID: 1813104207517465734}
+  - component: {fileID: 2603484357559965834}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -4568,7 +4569,7 @@ Transform:
   m_GameObject: {fileID: 8255909597831052302}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4625,6 +4626,27 @@ MonoBehaviour:
   sightRange: 20
   sightAngle: 40
   gizmoLines: 40
+--- !u!135 &2603484357559965834
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255909597831052302}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8364747716460130005
 GameObject:
   m_ObjectHideFlags: 0

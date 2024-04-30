@@ -16,5 +16,5 @@ MonoBehaviour:
     type: 3}
   <FireRate>k__BackingField: 0.1
   <Damage>k__BackingField: 10
-  <SpawnPosition>k__BackingField: {x: 0, y: 0, z: 0}
-  <SpawnRotation>k__BackingField: {x: 0, y: 0, z: 0}
+  <SpawnPosition>k__BackingField: {x: 12.2, y: 6, z: -7.9}
+  <SpawnRotation>k__BackingField: {x: 352.10953, y: 65.32654, z: 290.9955}

@@ -10,6 +10,7 @@ public class CS_Locomotion : CharacterState
     private const float AnimatorDampTime = 0.1f;
     private const float CrossFadeDuration = 0.1f;
 
+    private Vector3 lastPosition;
 
     public CS_Locomotion(Character character) : base(character)
     {
@@ -45,6 +46,8 @@ public class CS_Locomotion : CharacterState
 
     public override void Tick(float deltaTime)
     {
+        lastPosition = character.transform.position;
+
         if (!character.Health.IsAlive) return;
 
         if (player !=null)
@@ -83,6 +86,8 @@ public class CS_Locomotion : CharacterState
         rotation.z = 0;
         rotation.x = 0;
         character.transform.eulerAngles = rotation;
+
+
     }
 
     public override void FixedTick(float deltaTime)
@@ -177,12 +182,16 @@ public class CS_Locomotion : CharacterState
         Vector3 raycastDirection = new Vector3(0, -1, 0);
         //Debug.DrawLine(rayCastOrigin, rayCastOrigin + (raycastDirection * Game.GroundRaycastHeight * 2), Color.red);
         //Debug.Log("raycast origin = " + rayCastOrigin);
-        if (Physics.Raycast(rayCastOrigin, raycastDirection, out RaycastHit hit, Game.GroundRaycastHeight * 2, Game.GroundLayers))
+        if (Physics.Raycast(rayCastOrigin, raycastDirection, out RaycastHit hit, Game.GroundRaycastHeight * 2, Game.GroundLayers) &&
+            Vector3.Distance(newPosition, hit.point) < Game.MinFallHeight)
         {
-            if (Vector3.Distance(newPosition, hit.point) < Game.MinFallHeight)
-                newPosition = hit.point;
+            newPosition = hit.point;
         }
-        else Debug.LogError("Ground raycast failed to hit ground");
+        else
+        {
+            Debug.LogWarning("Ground raycast failed to hit ground");
+            newPosition.y = lastPosition.y;
+        }
 
         return newPosition;
     }

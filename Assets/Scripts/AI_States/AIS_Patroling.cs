@@ -13,7 +13,7 @@ public class AIS_Patroling : AI_State
     {
         if (!enemy.PartolManager.HasWaypoints) enemy.AI.SetNewState(new AIS_Gaurding(enemy));
 
-        enemy.StatusIndicator.Hide();
+        if (enemy.StatusIndicator != null) enemy.StatusIndicator.Hide();
         enemy.AI.Hearing.OnHearFootstep += OnHearFootstep;
         enemy.AI.Sight.OnSeePlayer += OnSeePlayer;
         enemy.NavMeshAgent.speed = enemy.WalkSpeed;
