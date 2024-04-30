@@ -3590,7 +3590,7 @@ MonoBehaviour:
   <WalkSpeed>k__BackingField: 1
   <RunSpeed>k__BackingField: 5
   <SneakSpeed>k__BackingField: 10
-  <RotationDamping>k__BackingField: 0.5
+  <RotationDamping>k__BackingField: 10
   <PushingSpeed>k__BackingField: 4
   <AI>k__BackingField: {fileID: 2153867371434918267}
   <StartingMode>k__BackingField: 1
