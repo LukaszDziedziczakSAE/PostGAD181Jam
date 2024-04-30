@@ -19,6 +19,11 @@ public class Health : MonoBehaviour
     public void ResetHealth()
     {
         currentHealth = maxHealth;
+
+        if (character.GetComponent<Player>())
+        {
+            UI.HealthIndicator.UpdatePlayerHealth();
+        }
     }
 
     public void TakeDamage(float amount)
