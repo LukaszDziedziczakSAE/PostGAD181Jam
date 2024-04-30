@@ -52,7 +52,8 @@ public class CS_Locomotion : CharacterState
 
     private void PlayerInput_OnAttackPress()
     {
-        player.SetNewState(new CS_Throwing(player));
+        if (player.Inventory.HasBottles) player.SetNewState(new CS_Throwing(player));
+
     }
 
     public override void Tick(float deltaTime)

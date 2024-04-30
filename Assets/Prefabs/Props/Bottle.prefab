@@ -96,6 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784f4d0b1e9455042adebd2b27352124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPosition: {x: -6.5, y: 14.5, z: 64.2}
+  spawnRotation: {x: 278.21985, y: 180.00024, z: 166.808}
+  rb: {fileID: 949379607501049599}
+  _collider: {fileID: 7315547866526889283}
 --- !u!135 &4928408969767102941
 SphereCollider:
   m_ObjectHideFlags: 0

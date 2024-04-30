@@ -7,14 +7,17 @@ public class CS_Throwing : CharacterState
     private readonly int Throw = Animator.StringToHash("Throw");
     private const float CrossFadeDuration = 0.1f;
 
+    private BottleThrower bottleThrower;
+
     public CS_Throwing(Character character) : base(character)
     {
-        
+        bottleThrower = character.GetComponent<BottleThrower>();
     }
 
     public override void StateStart()
     {
         character.Animator.CrossFadeInFixedTime(Throw, CrossFadeDuration);
+        bottleThrower.SpawnBottle();  
     }
 
     public override void Tick(float deltaTime)

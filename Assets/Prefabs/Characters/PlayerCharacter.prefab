@@ -2417,6 +2417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2073934979601789845}
+  bottlePrefab: {fileID: 4839775334136019597, guid: e0038c09dee58e74cb687e5147089479,
+    type: 3}
 --- !u!114 &7674652438081582086
 MonoBehaviour:
   m_ObjectHideFlags: 0
