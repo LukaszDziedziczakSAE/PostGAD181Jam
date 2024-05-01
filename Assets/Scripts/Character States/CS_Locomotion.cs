@@ -103,15 +103,15 @@ public class CS_Locomotion : CharacterState
         rotation.x = 0;
         character.transform.eulerAngles = rotation;
 
-
-    }
-
-    public override void FixedTick(float deltaTime)
-    {
         if (movement.magnitude > 0 && playerInput != null)
         {
             Move(deltaTime);
         }
+    }
+
+    public override void FixedTick(float deltaTime)
+    {
+        
 
         
     }

@@ -26,14 +26,29 @@ public class Character : MonoBehaviour
     public Vector3 Position => transform.position;
     System.Type aimingStateType;
 
+    Vector3 lastHandPositing;
+    Vector3 startingHandPosition;
+
+    public Vector3 HandPosition
+    {
+        get
+        {
+            return RightHand.position;
+        }
+    }
+
     protected virtual void Start()
     {
+        startingHandPosition = RightHand.position;
         SetNewState(new CS_Locomotion(this));
     }
 
     private void Update()
     {
         if (State != null) State.Tick(Time.deltaTime);
+        if (RightHand.position != startingHandPosition) lastHandPositing = RightHand.position;
+
+        print("RH post = " + RightHand.position + ", distance = " + Vector3.Distance(transform.position, RightHand.position));
     }
 
     private void FixedUpdate()

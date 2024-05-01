@@ -26,6 +26,8 @@ public class Bottle : MonoBehaviour
     Vector3 throwPosition;
     Vector3 lastPosition;
 
+    Vector3 inHandPoistion => Player.Instance.HandPosition + spawnPosition;
+
     private void Start()
     {
         lastPosition = transform.position;
@@ -60,11 +62,12 @@ public class Bottle : MonoBehaviour
             transform.position = position;
         }
 
-        else if (mode == EMode.Throwing)
+        /*else if (mode == EMode.Throwing)
         {
+            //transform.position = inHandPoistion;
             transform.localPosition = spawnPosition;
             transform.localEulerAngles = spawnRotation;
-        }
+        }*/
 
         lastPosition = transform.position;
     }

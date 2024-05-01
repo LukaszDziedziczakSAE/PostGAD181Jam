@@ -27,10 +27,10 @@ public class BottleThrower : MonoBehaviour
     public void SpawnBottle()
     {
         player.Inventory.RemoveBottleFromInventory();
-        UI.Debug.AddText("player position = " + player.transform.position);
-        UI.Debug.AddText("hand position = " + player.RightHand.position);
-        bottle = Instantiate(bottlePrefab, player.RightHand.position, Quaternion.identity);
-        UI.Debug.AddText("bottle position = " + bottle.transform.position);
+        if (UI.DebugIsOn) UI.Debug.AddText("player position = " + player.transform.position);
+        if (UI.DebugIsOn) UI.Debug.AddText("hand position = " + player.HandPosition);
+        bottle = Instantiate(bottlePrefab, player.HandPosition, Quaternion.identity);
+        if (UI.DebugIsOn) UI.Debug.AddText("bottle position = " + bottle.transform.position);
         bottle.transform.parent = player.RightHand;
         bottle.transform.localScale = Vector3.one * 100;
         bottle.transform.localPosition = spawnPosition;

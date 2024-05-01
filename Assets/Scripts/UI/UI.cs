@@ -21,6 +21,8 @@ public class UI : MonoBehaviour
     public static SFX_UI SFX => Instance.sfx;
     public static UI_PauseMenu PauseMenu => Instance.pauseMenu;
     public static UI_Debug Debug => Instance.debug;
+
+    public static bool DebugIsOn => Instance.debug.gameObject.activeSelf;
     
     private void Awake()
     {

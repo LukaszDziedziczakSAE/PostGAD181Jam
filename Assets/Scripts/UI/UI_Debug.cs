@@ -10,7 +10,7 @@ public class UI_Debug : MonoBehaviour
 
     private void Update()
     {
-        handposition.text = "hand position = " + Player.Instance.RightHand.position.ToString();
+        handposition.text = "hand position = " + Player.Instance.HandPosition.ToString();
     }
 
     public void AddText(string text)
