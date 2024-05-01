@@ -48,7 +48,7 @@ public class Character : MonoBehaviour
         if (State != null) State.Tick(Time.deltaTime);
         if (RightHand.position != startingHandPosition) lastHandPositing = RightHand.position;
 
-        print("RH post = " + RightHand.position + ", distance = " + Vector3.Distance(transform.position, RightHand.position));
+        /*print("RH post = " + RightHand.position + ", distance = " + Vector3.Distance(transform.position, RightHand.position));*/
     }
 
     private void FixedUpdate()
