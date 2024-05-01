@@ -87,10 +87,7 @@ public class CS_Pushing : CharacterState
         {
             character.SetNewState(new CS_Locomotion(character));
         }
-    }
 
-    public override void FixedTick(float deltaTime)
-    {
         if (movement.magnitude > 0 && playerInput != null)
         {
             //Move(deltaTime);
@@ -102,6 +99,11 @@ public class CS_Pushing : CharacterState
             position += forward * playerInput.Movement.y * character.PushingSpeed * deltaTime;
             character.Rigidbody.MovePosition(position);
         }
+    }
+
+    public override void FixedTick(float deltaTime)
+    {
+        
     }
 
     public override void StateEnd()
