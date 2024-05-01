@@ -29,6 +29,7 @@ public class Weapon : MonoBehaviour
 
     private void FireWeapon()
     {
+        if (!character.Health.IsAlive) return;
         //Debug.LogWarning("Weapon Fire");
         lastFire = Time.time;
         muzzleEffect?.Play();

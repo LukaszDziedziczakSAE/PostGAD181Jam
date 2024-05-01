@@ -25,7 +25,7 @@ public class BottleThrower : MonoBehaviour
     public void Throw()
     {
         //Time.timeScale = 0;
-
+        Debug.Log("ThrowForce = " + throwForce);
         if (player.Targeting.HasTarget)
         {
             bottle.SetModeTargeted(player.Targeting.Target, throwingForce);

@@ -22,6 +22,9 @@ public class Bottle : MonoBehaviour
     Enemy target;
     float throwStartTime = Mathf.NegativeInfinity;
     float homeingFlightTime => Time.time - throwStartTime;
+    Vector3 throwPosition;
+    bool throwReset;
+
 
     public enum EMode
     {
@@ -33,6 +36,12 @@ public class Bottle : MonoBehaviour
 
     private void Update()
     {
+        if ((mode == EMode.InFlight || mode == EMode.Homing) && !throwReset)
+        {
+            throwReset = true;
+            transform.position = throwPosition;
+        }
+
         if (mode == EMode.Homing && homeingFlightTime > homingDelay)
         {
             Vector3 targetPosition = new Vector3(target.Position.x, target.Position.y + targetHeightOffset, target.Position.z);
@@ -105,8 +114,11 @@ public class Bottle : MonoBehaviour
     public void SetModeInFlight(Vector3 newVelocity)
     {
         mode = EMode.InFlight;
+
         _collider.enabled = true;
+        throwPosition = transform.position;
         transform.parent = null;
+
         rb.velocity = newVelocity;
         trigger.enabled = true;
     }
@@ -116,8 +128,11 @@ public class Bottle : MonoBehaviour
         //Debug.Log(name + " in targeting mode");
         target = enemy;
         mode = EMode.Homing;
+
         _collider.enabled = false;
+        throwPosition = transform.position;
         transform.parent = null;
+
         rb.velocity = newVelocity;
         throwStartTime = Time.time;
         trigger.enabled = true;
