@@ -124,8 +124,6 @@ public class CS_Locomotion : CharacterState
     {
         float speed = isSneaking ? character.SneakSpeed : isRunning ? character.RunSpeed : character.WalkSpeed;
         Vector3 position = character.transform.position;
-        //position.x += movement.x * speed * deltaTime;
-        //position.z += movement.y * speed * deltaTime;
 
         Vector3 forward = player.CamFoward - player.transform.position;
         Vector3 right = player.CamRight - player.transform.position;

@@ -2156,7 +2156,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: db6299a49d7c77547845eb1763008796, type: 3}
   - {fileID: 8300000, guid: e1f46664cd473f148bd2d805e920f818, type: 3}
   - {fileID: 8300000, guid: 1d1f7c994e240c94da1c8de930e5857e, type: 3}
-  runningFootstepClips: []
+  runningFootstepClips:
+  - {fileID: 8300000, guid: a7294ccab07255440a5d89a5748b4dab, type: 3}
+  - {fileID: 8300000, guid: 091922a8d07be2449935d41ee980ad28, type: 3}
+  - {fileID: 8300000, guid: 650ea86260f21cf43853c9c73123cef9, type: 3}
+  - {fileID: 8300000, guid: 6ac5648bddd91814fa65ad0efad79e5e, type: 3}
 --- !u!82 &7960011670950154150
 AudioSource:
   m_ObjectHideFlags: 0
