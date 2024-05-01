@@ -154,5 +154,5 @@ MonoBehaviour:
   distanceToPlayer: 3.5
   angle: 20
   characterHeightOffeset: 1.6
-  rotationRate: 300
+  rotationRate: 250
   angleToPlayer: 0

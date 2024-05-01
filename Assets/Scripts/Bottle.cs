@@ -16,6 +16,7 @@ public class Bottle : MonoBehaviour
     [SerializeField] float damage = 100;
     [SerializeField] float homingDelay = 0.5f;
     [SerializeField] float targetHeightOffset = 1.7f;
+    [SerializeField] GameObject pickUpEffect;
 
     Enemy target;
     float throwStartTime = Mathf.NegativeInfinity;
@@ -54,6 +55,8 @@ public class Bottle : MonoBehaviour
             {
                 player.Inventory.AddBottleToInventory();
                 Game.BottleCollectionWin.BottlePickedUp();
+                UI.SFX.PlayPickUpSound();
+                if (pickUpEffect != null) Instantiate(pickUpEffect, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
@@ -105,7 +108,7 @@ public class Bottle : MonoBehaviour
         //Debug.Log(name + " in targeting mode");
         target = enemy;
         mode = EMode.Homing;
-        _collider.enabled = true;
+        _collider.enabled = false;
         transform.parent = null;
         rb.velocity = newVelocity;
         throwStartTime = Time.time;
