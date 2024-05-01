@@ -17,6 +17,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action OnAimingPress;
     public event Action OnSneakingPress;
     public event Action OnRunningPress;
+    public event Action OnMenuPress;
 
     private void Awake()
     {
@@ -76,5 +77,10 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
             OnAimingPress?.Invoke();
         }
         else if (context.canceled) Aiming = false;
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.performed) OnMenuPress?.Invoke();
     }
 }
