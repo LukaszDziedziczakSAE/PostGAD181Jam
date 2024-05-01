@@ -52,4 +52,18 @@ public class Game : MonoBehaviour
     }
 
     public static CameraController CameraController => Instance.cameraController;
+
+    public static void ShowCursor(bool show)
+    {
+        if (show)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
 }
