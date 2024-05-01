@@ -21,13 +21,15 @@ public class BottleThrower : MonoBehaviour
     {
         if (player.Targeting.HasTarget)
         {
-            bottle.SetModeTargeted(player.Targeting.Target);
+            bottle.SetModeTargeted(player.Targeting.Target, throwingForce);
         }
         else
         {
-            bottle.SetModeInFlight((player.transform.forward + (player.transform.up / 2)) * throwForce);
+            bottle.SetModeInFlight(throwingForce);
         }
         
         bottle = null;
     }
+
+    private Vector3 throwingForce => (player.transform.forward + (player.transform.up / 2)) * throwForce;
 }

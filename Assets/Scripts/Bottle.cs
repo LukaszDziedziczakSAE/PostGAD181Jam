@@ -14,8 +14,12 @@ public class Bottle : MonoBehaviour
     [SerializeField] ParticleSystem smashPrefab;
     [SerializeField] float homingSpeed;
     [SerializeField] float damage = 100;
+    [SerializeField] float homingDelay = 0.5f;
+    [SerializeField] float targetHeightOffset = 1.7f;
 
     Enemy target;
+    float throwStartTime = Mathf.NegativeInfinity;
+    float homeingFlightTime => Time.time - throwStartTime;
 
     public enum EMode
     {
@@ -27,9 +31,9 @@ public class Bottle : MonoBehaviour
 
     private void Update()
     {
-        if (mode == EMode.Homing)
+        if (mode == EMode.Homing && homeingFlightTime > homingDelay)
         {
-            Vector3 targetPosition = new Vector3(target.Position.x, target.Position.y + 1.6f, target.Position.z);
+            Vector3 targetPosition = new Vector3(target.Position.x, target.Position.y + targetHeightOffset, target.Position.z);
             Vector3 direction = (targetPosition - transform.position).normalized;
             Vector3 position = transform.position;
             position += direction * homingSpeed * Time.deltaTime;
@@ -92,17 +96,23 @@ public class Bottle : MonoBehaviour
         mode = EMode.InFlight;
         _collider.enabled = true;
         transform.parent = null;
-
         rb.velocity = newVelocity;
     }
 
-    public void SetModeTargeted(Enemy enemy)
+    public void SetModeTargeted(Enemy enemy, Vector3 newVelocity)
     {
-        Debug.Log(name + " in targeting mode");
+        //Debug.Log(name + " in targeting mode");
         target = enemy;
         mode = EMode.Homing;
         _collider.enabled = true;
         transform.parent = null;
+        rb.velocity = newVelocity;
+        throwStartTime = Time.time;
+    }
+
+    private void BeginHoming()
+    {
+        
         rb.useGravity = false;
     }
 }
