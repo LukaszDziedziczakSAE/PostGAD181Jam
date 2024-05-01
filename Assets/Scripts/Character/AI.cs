@@ -72,7 +72,7 @@ public class AI : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.name + " entered enemy radius");
-
+        if (!Enemy.Health.IsAlive) return;
         if (other.TryGetComponent<Character>(out Character character))
         {
             CharactersInRange.Add(character);
@@ -87,7 +87,7 @@ public class AI : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent<Character>(out Character character))
+        if (other.TryGetComponent<Character>(out Character character) && CharactersInRange.Contains(character))
         {
             CharactersInRange.Remove(character);
             if (character.TryCast<Player>(out Player player))
