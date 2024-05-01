@@ -5377,6 +5377,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b50281cde4848f546ad77fc060f7d82a, type: 3}
   - {fileID: 8300000, guid: 04d572756fddcd94ba15d5d68b5b256b, type: 3}
   - {fileID: 8300000, guid: cd4cb6999da00094b9317e091c2b449f, type: 3}
+  introClips:
+  - {fileID: 8300000, guid: da079085ec703fb4790c0a9c389e71dd, type: 3}
+  - {fileID: 8300000, guid: 67429b82e0664f943b7bc113e6ccd7bd, type: 3}
+  dePoliceClips:
+  - {fileID: 8300000, guid: 4ca2e536799cb104b8c1e759d963882c, type: 3}
 --- !u!1 &8222117724664412168
 GameObject:
   m_ObjectHideFlags: 0

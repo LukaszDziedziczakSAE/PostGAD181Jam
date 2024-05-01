@@ -10,11 +10,18 @@ public class Player : Character
     [field: SerializeField] public PlayerInventory Inventory { get; private set; }
     [field: SerializeField] public BottleThrower BottleThrower { get; private set; }
     [field: SerializeField] public PlayerTargeting Targeting { get; private set; }
+    
     private void Awake()
     {
         if (Player.Instance == null) Instance = this;
         else Destroy(this.gameObject);
 
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        SFX_Voice.PlayIntroSpeach();
     }
 
     /// <summary>

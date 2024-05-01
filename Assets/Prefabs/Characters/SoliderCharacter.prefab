@@ -1579,6 +1579,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b50281cde4848f546ad77fc060f7d82a, type: 3}
   - {fileID: 8300000, guid: 04d572756fddcd94ba15d5d68b5b256b, type: 3}
   - {fileID: 8300000, guid: cd4cb6999da00094b9317e091c2b449f, type: 3}
+  introClips: []
+  dePoliceClips: []
 --- !u!1 &3651066174025677359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4065,7 +4067,7 @@ MonoBehaviour:
   <StatusIndicator>k__BackingField: {fileID: 0}
   <EngagmentRange>k__BackingField: 10
   <BurstAmount>k__BackingField: 1
-  <BurstRate>k__BackingField: 3
+  <BurstRate>k__BackingField: 1.5
 --- !u!114 &7782681699005980355
 MonoBehaviour:
   m_ObjectHideFlags: 0

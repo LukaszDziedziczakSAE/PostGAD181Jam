@@ -7,6 +7,8 @@ public class SFX_Voice : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip[] dyingClips;
     [SerializeField] AudioClip[] hurtClips;
+    [SerializeField] AudioClip[] introClips;
+    [SerializeField] AudioClip[] dePoliceClips;
 
     public void PlayDyingSound()
     {
@@ -21,6 +23,22 @@ public class SFX_Voice : MonoBehaviour
         if (hurtClips.Length == 0) return;
         audioSource.loop = false;
         audioSource.clip = hurtClips[Random.Range(0, hurtClips.Length)];
+        audioSource.Play();
+    }
+
+    public void PlayIntroSpeach()
+    {
+        if (introClips.Length == 0) return;
+        audioSource.loop = false;
+        audioSource.clip = introClips[Random.Range(0, introClips.Length)];
+        audioSource.Play();
+    }
+
+    public void PlayDaPoliceClips()
+    {
+        if (dePoliceClips.Length == 0) return;
+        audioSource.loop = false;
+        audioSource.clip = dePoliceClips[Random.Range(0, dePoliceClips.Length)];
         audioSource.Play();
     }
 }

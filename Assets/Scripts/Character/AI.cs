@@ -80,6 +80,7 @@ public class AI : MonoBehaviour
             {
                 player.Footsteps.OnWalkStep += Hearing.OnHearWalkStep;
                 player.Footsteps.OnRunStep += Hearing.OnHearRunStep;
+                player.SFX_Voice.PlayDaPoliceClips();
             }
         }
     }
