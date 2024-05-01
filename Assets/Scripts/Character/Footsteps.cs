@@ -19,12 +19,12 @@ public class Footsteps : MonoBehaviour
     {
         //Debug.Log(player.name + " footstep");
         OnWalkStep?.Invoke(player.Position);
-        player.SFX_Footstep.PlayFootstepSound();
+        player.SFX_Footstep.PlayWalkingFootstep();
     }
 
     private void RunStep()
     {
         OnRunStep?.Invoke(player.Position);
-        player.SFX_Footstep.PlayFootstepSound();
+        player.SFX_Footstep.PlayRunningFootstep();
     }
 }
