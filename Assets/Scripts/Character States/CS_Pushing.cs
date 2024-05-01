@@ -85,7 +85,7 @@ public class CS_Pushing : CharacterState
             Game.CameraController.Rotate(-playerInput.Look.x);
         }
 
-        if (playerInput.Movement.y < 0 || playerInput.Movement.x != 0)
+        if (playerInput.Movement.y < 0 /*|| playerInput.Movement.x != 0*/)
         {
             character.SetNewState(new CS_Locomotion(character));
         }
