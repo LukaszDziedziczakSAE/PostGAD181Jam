@@ -6,11 +6,28 @@ public class Crate : MonoBehaviour
 {
     [SerializeField] EAxisOfMovement axisOfMovement;
     [SerializeField] float clearance = 1f;
+    [SerializeField] float stopSoundDelay;
+    [SerializeField] AudioSource audioSource;
     bool characterEntered;
     bool forward;
+    float lastMove = Mathf.NegativeInfinity;
 
     public EAxisOfMovement AxisOfMovement => axisOfMovement;
     public float Clearance => clearance;
+
+    private void Update()
+    {
+        if (audioSource.isPlaying)
+        {
+            if (Time.time - lastMove > stopSoundDelay)
+                audioSource.Stop();
+        }
+        else
+        {
+            if (Time.time - lastMove < stopSoundDelay)
+                audioSource.Play();
+        }
+    }
 
     public enum EAxisOfMovement
     {
@@ -52,6 +69,7 @@ public class Crate : MonoBehaviour
             else position += (new Vector3(0, 0, -1) * amount);
         }
         transform.position = position;
+        lastMove = Time.time;
     }
 
     private void SetDirection(Player player)
