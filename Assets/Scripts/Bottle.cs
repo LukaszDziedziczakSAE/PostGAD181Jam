@@ -105,7 +105,7 @@ public class Bottle : MonoBehaviour
         //Debug.Log(name + " in targeting mode");
         target = enemy;
         mode = EMode.Homing;
-        _collider.enabled = true;
+        _collider.enabled = false;
         transform.parent = null;
         rb.velocity = newVelocity;
         throwStartTime = Time.time;
