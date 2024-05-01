@@ -1636,7 +1636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 422687129904471642}
-  pickUpClips: []
+  pickUpClips:
+  - {fileID: 8300000, guid: f7877a8677535264ebe18bd85e445c51, type: 3}
 --- !u!82 &422687129904471642
 AudioSource:
   m_ObjectHideFlags: 0

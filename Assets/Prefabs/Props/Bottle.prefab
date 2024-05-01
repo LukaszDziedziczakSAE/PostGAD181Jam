@@ -102,6 +102,11 @@ MonoBehaviour:
   _collider: {fileID: 7315547866526889283}
   smashPrefab: {fileID: 19800004, guid: b46890100828db6429ff69c322b45893, type: 3}
   homingSpeed: 10
+  damage: 100
+  homingDelay: 0.5
+  targetHeightOffset: 1.7
+  pickUpEffect: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55,
+    type: 3}
 --- !u!135 &4928408969767102941
 SphereCollider:
   m_ObjectHideFlags: 0
