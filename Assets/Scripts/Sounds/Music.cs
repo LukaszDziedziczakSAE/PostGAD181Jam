@@ -15,7 +15,7 @@ public class Music : MonoBehaviour
     public void PlayMusic()
     {
         if (musicClips.Length == 0) return;
-        audioSource.loop = false;
+        audioSource.loop = true;
         audioSource.clip = musicClips[Random.Range(0, musicClips.Length)];
         audioSource.Play();
     }
