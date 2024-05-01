@@ -19765,6 +19765,16 @@ PrefabInstance:
       propertyPath: <Ragdoll>k__BackingField
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2073934979601789845, guid: c8a8fc1a491f68c4ea7927a327048b45,
+        type: 3}
+      propertyPath: <RunSpeed>k__BackingField
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073934979601789845, guid: c8a8fc1a491f68c4ea7927a327048b45,
+        type: 3}
+      propertyPath: <WalkSpeed>k__BackingField
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3193048857746103039, guid: c8a8fc1a491f68c4ea7927a327048b45,
         type: 3}
       propertyPath: m_Name
