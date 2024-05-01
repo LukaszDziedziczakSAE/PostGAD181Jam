@@ -32,8 +32,10 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            character.SFX_Voice.PlayDyingSound();
             Death();
         }
+        else character.SFX_Voice.PlayHurtSound();
 
         if (character.GetComponent<Player>())
         {

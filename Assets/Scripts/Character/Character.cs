@@ -13,6 +13,8 @@ public class Character : MonoBehaviour
     [field: SerializeField] public Health Health { get; private set; }
     [field: SerializeField] public Combat Combat { get; private set; }
     [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
+    [field: SerializeField] public SFX_Body SFX_Body { get; private set; }
+    [field: SerializeField] public SFX_Voice SFX_Voice { get; private set; }
 
     [field: SerializeField, Header("Setting")] public float WalkSpeed { get; private set; } = 5f;
     [field: SerializeField] public float RunSpeed { get; private set; } = 10f;
