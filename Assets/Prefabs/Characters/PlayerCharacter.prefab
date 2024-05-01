@@ -5374,9 +5374,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 28272b95609aefd41b82a0d09d6488d0, type: 3}
   - {fileID: 8300000, guid: f85fdedf721035546a3a73148b84ede6, type: 3}
   hurtClips:
-  - {fileID: 8300000, guid: b50281cde4848f546ad77fc060f7d82a, type: 3}
-  - {fileID: 8300000, guid: 04d572756fddcd94ba15d5d68b5b256b, type: 3}
-  - {fileID: 8300000, guid: cd4cb6999da00094b9317e091c2b449f, type: 3}
+  - {fileID: 8300000, guid: ce91abe9eb8dabc4a90cc8857e653592, type: 3}
+  - {fileID: 8300000, guid: 75920edfba4704e45a6d814c380e5482, type: 3}
+  - {fileID: 8300000, guid: 953d4a7dcddc7dc45aea269e2be5696b, type: 3}
+  - {fileID: 8300000, guid: cc24c7eabd0f82442b80c31c440d95e7, type: 3}
   introClips:
   - {fileID: 8300000, guid: da079085ec703fb4790c0a9c389e71dd, type: 3}
   - {fileID: 8300000, guid: 67429b82e0664f943b7bc113e6ccd7bd, type: 3}
