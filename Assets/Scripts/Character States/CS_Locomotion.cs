@@ -136,7 +136,8 @@ public class CS_Locomotion : CharacterState
             + right * playerInput.Movement.x * speed * deltaTime;
         FaceDirection(forward, deltaTime);
         position = CorrectGroundPosition(position);
-        if (CanMoveToPosition(position)) character.Rigidbody.MovePosition(position);
+        if (isRunning && CanMoveToPosition(position)) character.Rigidbody.MovePosition(position);
+        else if (!isRunning) character.Rigidbody.MovePosition(position);
     }
 
     private void FaceDirection(Vector3 target, float deltaTime)
@@ -223,11 +224,19 @@ public class CS_Locomotion : CharacterState
         foreach (RaycastHit hit in hits)
         {
             if (hit.collider == character.CapsuleCollider ||
-                hit.collider == groundColider) continue;
+                hit.collider == groundColider ||
+                hit.collider.tag == "DoNotHit") continue;
             validHits.Add(hit);
         }
 
-        if (validHits.Count > 0) return false;
+        if (validHits.Count > 0)
+        {
+            foreach(RaycastHit validHit in validHits)
+            {
+                Debug.Log("Blocking colider " + validHit.collider.name);
+            }
+            return false;
+        }
         else return true;
     }
 
