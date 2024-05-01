@@ -22,6 +22,7 @@ public class CS_Death : CharacterState
         {
             enemy.NavMeshAgent.isStopped = true;
         }
+
     }
 
     public override void Tick(float deltaTime)

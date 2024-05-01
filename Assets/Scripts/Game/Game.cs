@@ -13,12 +13,14 @@ public class Game : MonoBehaviour
     [SerializeField] float groundRaycastHeight;
     [SerializeField] float minFallHeight = 0.5f;
     [SerializeField] float timeToRespawnAfterDeath = 2f;
+    [SerializeField] BottleCollectionWin collectionWin;
 
     float timer;
 
     public static LayerMask GroundLayers => Instance.groundLayers;
     public static float GroundRaycastHeight => Instance.groundRaycastHeight;
     public static float MinFallHeight => Instance.minFallHeight;
+    public static BottleCollectionWin BottleCollectionWin => Instance.collectionWin;
 
     private void Awake()
     {

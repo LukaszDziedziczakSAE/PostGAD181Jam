@@ -53,6 +53,7 @@ public class Bottle : MonoBehaviour
             if (player != null)
             {
                 player.Inventory.AddBottleToInventory();
+                Game.BottleCollectionWin.BottlePickedUp();
                 Destroy(gameObject);
             }
         }
