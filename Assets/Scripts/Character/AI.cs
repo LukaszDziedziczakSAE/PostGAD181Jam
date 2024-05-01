@@ -71,7 +71,7 @@ public class AI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name + " entered enemy radius");
+        //Debug.Log(other.name + " entered enemy radius");
 
         if (other.TryGetComponent<Character>(out Character character))
         {
