@@ -9,10 +9,12 @@ public class UI : MonoBehaviour
     [SerializeField] UI_Blackscreen blackscreen;
     [SerializeField] UI_BottleCountIndicator bottleCountIndicator;
     [SerializeField] UI_HealthIndicator healthIndicator;
+    [SerializeField] UI_Objective objective;
     
     public static UI_Blackscreen Blackscreen => Instance.blackscreen;
     public static UI_BottleCountIndicator BottleCountIndicator => Instance.bottleCountIndicator;
     public static UI_HealthIndicator HealthIndicator => Instance.healthIndicator;
+    public static UI_Objective Objective => Instance.objective;
     
     private void Awake()
     {
