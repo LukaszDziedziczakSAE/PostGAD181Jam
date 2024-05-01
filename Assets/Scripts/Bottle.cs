@@ -18,12 +18,14 @@ public class Bottle : MonoBehaviour
     [SerializeField] float homingDelay = 0.5f;
     [SerializeField] float targetHeightOffset = 1.7f;
     [SerializeField] GameObject pickUpEffect;
+    [SerializeField] float moveTooFastDistance = 2f;
 
     Enemy target;
     float throwStartTime = Mathf.NegativeInfinity;
     float homeingFlightTime => Time.time - throwStartTime;
     Vector3 throwPosition;
     bool throwReset;
+    Vector3 lastPosition;
 
 
     public enum EMode
@@ -36,10 +38,24 @@ public class Bottle : MonoBehaviour
 
     private void Update()
     {
-        if ((mode == EMode.InFlight || mode == EMode.Homing) && !throwReset)
+        if ((mode == EMode.InFlight || mode == EMode.Homing))
         {
-            throwReset = true;
-            transform.position = throwPosition;
+            if (!throwReset)
+            {
+                throwReset = true;
+                transform.position = throwPosition;
+            }
+            
+            else
+            {
+                if (Vector3.Distance(transform.position, lastPosition) > moveTooFastDistance)
+                {
+                    transform.position = lastPosition;
+                    Debug.LogWarning(name + " moving too fast");
+                }
+            }
+
+            //print("bottle position = " + transform.position);
         }
 
         if (mode == EMode.Homing && homeingFlightTime > homingDelay)
@@ -56,6 +72,8 @@ public class Bottle : MonoBehaviour
             transform.localPosition = spawnPosition;
             transform.localEulerAngles = spawnRotation;
         }
+
+        lastPosition = transform.localPosition;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -119,6 +137,7 @@ public class Bottle : MonoBehaviour
         throwPosition = transform.position;
         transform.parent = null;
 
+        rb.ResetInertiaTensor();
         rb.velocity = newVelocity;
         trigger.enabled = true;
     }
@@ -133,6 +152,7 @@ public class Bottle : MonoBehaviour
         throwPosition = transform.position;
         transform.parent = null;
 
+        rb.ResetInertiaTensor();
         rb.velocity = newVelocity;
         throwStartTime = Time.time;
         trigger.enabled = true;
