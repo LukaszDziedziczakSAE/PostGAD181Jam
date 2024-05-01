@@ -7,8 +7,6 @@ public class Player : Character
 {
     public static Player Instance {  get; private set; }
     [field: SerializeField, Header("Player Referances")] public InputReader Input { get; private set; }
-
-    [field: SerializeField] public Footsteps Footsteps { get; private set; }
     [field: SerializeField] public PlayerInventory Inventory { get; private set; }
     [field: SerializeField] public BottleThrower BottleThrower { get; private set; }
     [field: SerializeField] public PlayerTargeting Targeting { get; private set; }

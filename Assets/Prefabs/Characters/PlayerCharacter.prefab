@@ -2999,13 +2999,13 @@ MonoBehaviour:
   <Ragdoll>k__BackingField: {fileID: 5718034464543922624}
   <SFX_Body>k__BackingField: {fileID: 3758406486578813442}
   <SFX_Voice>k__BackingField: {fileID: 7867133427255744358}
+  <Footsteps>k__BackingField: {fileID: 7674652438081582086}
   <WalkSpeed>k__BackingField: 5
   <RunSpeed>k__BackingField: 10
   <SneakSpeed>k__BackingField: 10
   <RotationDamping>k__BackingField: 30
   <PushingSpeed>k__BackingField: 4
   <Input>k__BackingField: {fileID: 21381890256665771}
-  <Footsteps>k__BackingField: {fileID: 7674652438081582086}
   <Inventory>k__BackingField: {fileID: 2898861561543528232}
   <BottleThrower>k__BackingField: {fileID: 3817176294404861904}
   <Targeting>k__BackingField: {fileID: 9126415557028628340}
@@ -5455,7 +5455,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 6766680030208270795}
-  footstepClip: {fileID: 0}
+  walkingFootstepClips:
+  - {fileID: 8300000, guid: 299266c6106d2f34399457806fb16156, type: 3}
+  - {fileID: 8300000, guid: db6299a49d7c77547845eb1763008796, type: 3}
+  - {fileID: 8300000, guid: e1f46664cd473f148bd2d805e920f818, type: 3}
+  - {fileID: 8300000, guid: 1d1f7c994e240c94da1c8de930e5857e, type: 3}
+  runningFootstepClips: []
 --- !u!82 &6766680030208270795
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5513,7 +5518,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

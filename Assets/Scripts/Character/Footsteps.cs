@@ -5,26 +5,26 @@ using UnityEngine;
 
 public class Footsteps : MonoBehaviour
 {
-    Player player;
+    Character character;
 
     public event Action<Vector3> OnWalkStep;
     public event Action<Vector3> OnRunStep;
 
     private void Awake()
     {
-        player = GetComponentInParent<Player>();
+        character = GetComponentInParent<Character>();
     }
 
     private void WalkStep()
     {
         //Debug.Log(player.name + " footstep");
-        OnWalkStep?.Invoke(player.Position);
-        player.SFX_Footstep.PlayWalkingFootstep();
+        OnWalkStep?.Invoke(character.Position);
+        character.SFX_Footstep.PlayWalkingFootstep();
     }
 
     private void RunStep()
     {
-        OnRunStep?.Invoke(player.Position);
-        player.SFX_Footstep.PlayRunningFootstep();
+        OnRunStep?.Invoke(character.Position);
+        character.SFX_Footstep.PlayRunningFootstep();
     }
 }
