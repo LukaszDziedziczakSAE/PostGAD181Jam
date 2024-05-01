@@ -6,6 +6,12 @@ using UnityEngine;
 public class UI_Debug : MonoBehaviour
 {
     [SerializeField] TMP_Text text;
+    [SerializeField] TMP_Text handposition;
+
+    private void Update()
+    {
+        handposition.text = "hand position = " + Player.Instance.RightHand.position.ToString();
+    }
 
     public void AddText(string text)
     {

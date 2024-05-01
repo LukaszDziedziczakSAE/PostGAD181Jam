@@ -1,16 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class BottleThrower : MonoBehaviour
 {
-    [SerializeField] Player player;
+    Player player;
     [SerializeField] Bottle bottlePrefab;
     [SerializeField] float throwForce = 10;
     [SerializeField] Vector3 spawnPosition;
     [SerializeField] Vector3 spawnRotation;
 
     Bottle bottle;
+    float lastThrowTime;
+
+    private void Awake()
+    {
+        player = GetComponent<Player>();
+    }
+
+    private void Update()
+    {
+        
+    }
 
     public void SpawnBottle()
     {
