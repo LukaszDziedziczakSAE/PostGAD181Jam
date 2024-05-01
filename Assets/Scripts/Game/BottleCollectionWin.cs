@@ -13,6 +13,8 @@ public class BottleCollectionWin : MonoBehaviour
     private void Start()
     {
         bottlesInLevel = FindObjectsOfType<Bottle>().Length;
+        if (bottlesInLevel == 0) Debug.LogError("no bottles found");
+        UI.Objective.UpdateObjectiveText();
     }
 
     public void BottlePickedUp()
