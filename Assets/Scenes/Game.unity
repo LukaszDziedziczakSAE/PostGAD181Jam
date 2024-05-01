@@ -270,10 +270,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
       propertyPath: m_Name
-      value: Bottle (3)
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3539,10 +3549,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
       propertyPath: m_Name
-      value: Bottle (6)
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4819,10 +4839,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
       propertyPath: m_Name
-      value: Bottle (10)
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10084,10 +10114,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
       propertyPath: m_Name
-      value: Bottle (2)
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10700,10 +10740,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
       propertyPath: m_Name
-      value: Bottle (9)
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10835,10 +10885,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
       propertyPath: m_Name
-      value: Bottle (7)
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11202,6 +11262,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
@@ -12909,10 +12979,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
       propertyPath: m_Name
-      value: Bottle (8)
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13046,10 +13126,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
       propertyPath: m_Name
-      value: Bottle (1)
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13244,10 +13334,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
       propertyPath: m_Name
-      value: Bottle (5)
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14916,10 +15016,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}
       propertyPath: m_Name
-      value: Bottle (4)
+      value: Bottle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17651,20 +17761,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 438175268343061657, guid: c8a8fc1a491f68c4ea7927a327048b45,
-        type: 3}
-      propertyPath: maxHealth
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 3193048857746103039, guid: c8a8fc1a491f68c4ea7927a327048b45,
         type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 4296027506959429318, guid: c8a8fc1a491f68c4ea7927a327048b45,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7279381037953412362, guid: c8a8fc1a491f68c4ea7927a327048b45,
         type: 3}
@@ -26457,6 +26557,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928408969767102941, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315547866526889283, guid: e0038c09dee58e74cb687e5147089479,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7554891581380529393, guid: e0038c09dee58e74cb687e5147089479,
         type: 3}

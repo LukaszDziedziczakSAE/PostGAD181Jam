@@ -7,18 +7,25 @@ public class BottleThrower : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] Bottle bottlePrefab;
     [SerializeField] float throwForce = 10;
+    [SerializeField] Vector3 spawnPosition;
+    [SerializeField] Vector3 spawnRotation;
 
     Bottle bottle;
 
     public void SpawnBottle()
     {
         player.Inventory.RemoveBottleFromInventory();
-        bottle = Instantiate(bottlePrefab);
-        bottle.SetModeThrowing(player);
+        bottle = Instantiate(bottlePrefab, player.RightHand);
+        bottle.transform.localScale = Vector3.one * 100;
+        bottle.transform.localPosition = spawnPosition;
+        bottle.transform.localEulerAngles = spawnRotation;
+        bottle.SetModeThrowing();
     }
 
     public void Throw()
     {
+        //Time.timeScale = 0;
+
         if (player.Targeting.HasTarget)
         {
             bottle.SetModeTargeted(player.Targeting.Target, throwingForce);
@@ -27,7 +34,7 @@ public class BottleThrower : MonoBehaviour
         {
             bottle.SetModeInFlight(throwingForce);
         }
-        
+
         bottle = null;
     }
 

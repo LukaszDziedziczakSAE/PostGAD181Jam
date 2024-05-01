@@ -2844,7 +2844,7 @@ GameObject:
   - component: {fileID: 9126415557028628340}
   m_Layer: 6
   m_Name: PlayerCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2959,7 +2959,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &438175268343061657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2973,7 +2973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 2073934979601789845}
-  maxHealth: 100
+  maxHealth: 40
   currentHealth: 0
 --- !u!114 &2073934979601789845
 MonoBehaviour:
@@ -3071,6 +3071,8 @@ MonoBehaviour:
   bottlePrefab: {fileID: 4839775334136019597, guid: e0038c09dee58e74cb687e5147089479,
     type: 3}
   throwForce: 10
+  spawnPosition: {x: -6.5, y: 14.5, z: 64.2}
+  spawnRotation: {x: 278.21985, y: 180.00024, z: 166.808}
 --- !u!114 &7674652438081582086
 MonoBehaviour:
   m_ObjectHideFlags: 0

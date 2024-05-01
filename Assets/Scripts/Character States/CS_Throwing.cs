@@ -16,6 +16,7 @@ public class CS_Throwing : CharacterState
 
     public override void StateStart()
     {
+        //Time.timeScale = 0.1f;
         character.Animator.CrossFadeInFixedTime(Throw, CrossFadeDuration);
         bottleThrower.SpawnBottle();  
     }

@@ -11,6 +11,7 @@ public class Bottle : MonoBehaviour
     [SerializeField] Vector3 spawnRotation;
     [SerializeField] Rigidbody rb;
     [SerializeField] Collider _collider;
+    [SerializeField] Collider trigger;
     [SerializeField] ParticleSystem smashPrefab;
     [SerializeField] float homingSpeed;
     [SerializeField] float damage = 100;
@@ -40,6 +41,12 @@ public class Bottle : MonoBehaviour
             position += direction * homingSpeed * Time.deltaTime;
             transform.position = position;
         }
+
+        else if (mode == EMode.Throwing)
+        {
+            transform.localPosition = spawnPosition;
+            transform.localEulerAngles = spawnRotation;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,7 +68,7 @@ public class Bottle : MonoBehaviour
             }
         }
 
-        else if (mode == EMode.InFlight)
+        else if (mode == EMode.InFlight && other.tag != "Player")
         {
 
             //Debug.Log("bottle hit " + other.gameObject.name);
@@ -69,7 +76,7 @@ public class Bottle : MonoBehaviour
             Destroy(gameObject);
         }
 
-        else if (mode == EMode.Homing)
+        else if (mode == EMode.Homing && other.tag != "Player")
         {
             Health health = other.gameObject.GetComponent<Health>();
             if (health == null) health = other.GetComponentInParent<Health>();
@@ -86,13 +93,13 @@ public class Bottle : MonoBehaviour
 
     }
 
-    public void SetModeThrowing(Player player)
+    public void SetModeThrowing(/*Player player*/)
     {
         mode = EMode.Throwing;
         _collider.enabled = false;
-        transform.parent = player.RightHand;
-        transform.localPosition = spawnPosition;
-        transform.localEulerAngles = spawnRotation;
+        //transform.parent = player.RightHand;
+        //transform.localPosition = spawnPosition;
+        //transform.localEulerAngles = spawnRotation;
     }
 
     public void SetModeInFlight(Vector3 newVelocity)
@@ -101,6 +108,7 @@ public class Bottle : MonoBehaviour
         _collider.enabled = true;
         transform.parent = null;
         rb.velocity = newVelocity;
+        trigger.enabled = true;
     }
 
     public void SetModeTargeted(Enemy enemy, Vector3 newVelocity)
@@ -112,6 +120,7 @@ public class Bottle : MonoBehaviour
         transform.parent = null;
         rb.velocity = newVelocity;
         throwStartTime = Time.time;
+        trigger.enabled = true;
     }
 
     private void BeginHoming()
