@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CS_Locomotion : CharacterState
@@ -10,8 +11,9 @@ public class CS_Locomotion : CharacterState
     private readonly int Locomotion_Rifle = Animator.StringToHash("Locomotion_Rifle");
     private const float AnimatorDampTime = 0.1f;
     private const float CrossFadeDuration = 0.1f;
-
+    private const float PositionCheckSphereCastSize = 0.1f;
     private Vector3 lastPosition;
+    private Collider groundColider;
 
     public CS_Locomotion(Character character) : base(character)
     {
@@ -47,7 +49,9 @@ public class CS_Locomotion : CharacterState
         if (playerInput != null)
         {
             playerInput.OnAttackPress += PlayerInput_OnAttackPress;
+            SetGroundColider();
         }
+        
     }
 
     private void PlayerInput_OnAttackPress()
@@ -132,7 +136,7 @@ public class CS_Locomotion : CharacterState
             + right * playerInput.Movement.x * speed * deltaTime;
         FaceDirection(forward, deltaTime);
         position = CorrectGroundPosition(position);
-        character.Rigidbody.MovePosition(position);
+        if (CanMoveToPosition(position)) character.Rigidbody.MovePosition(position);
     }
 
     private void FaceDirection(Vector3 target, float deltaTime)
@@ -199,6 +203,7 @@ public class CS_Locomotion : CharacterState
             Vector3.Distance(newPosition, hit.point) < Game.MinFallHeight)
         {
             newPosition = hit.point;
+            groundColider = hit.collider;
         }
         else
         {
@@ -207,5 +212,30 @@ public class CS_Locomotion : CharacterState
         }
 
         return newPosition;
+    }
+
+    private bool CanMoveToPosition(Vector3 postion)
+    {
+        RaycastHit[] hits = Physics.SphereCastAll(postion, PositionCheckSphereCastSize, character.transform.up);
+
+        List<RaycastHit> validHits = new List<RaycastHit>();
+
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.collider == character.CapsuleCollider ||
+                hit.collider == groundColider) continue;
+            validHits.Add(hit);
+        }
+
+        if (validHits.Count > 0) return false;
+        else return true;
+    }
+
+    private void SetGroundColider()
+    {
+        if (Physics.Raycast(character.transform.position, new Vector3(0, -1, 0), out RaycastHit hit, Game.GroundRaycastHeight, Game.GroundLayers))
+        {
+            groundColider = hit.collider;
+        }
     }
 }
