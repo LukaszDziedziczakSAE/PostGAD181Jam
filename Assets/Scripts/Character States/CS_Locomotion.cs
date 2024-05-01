@@ -208,7 +208,7 @@ public class CS_Locomotion : CharacterState
         }
         else
         {
-            Debug.LogWarning("Ground raycast failed to hit ground");
+            //Debug.LogWarning("Ground raycast failed to hit ground");
             newPosition.y = lastPosition.y;
         }
 

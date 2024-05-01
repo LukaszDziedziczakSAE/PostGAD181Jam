@@ -24,7 +24,6 @@ public class Bottle : MonoBehaviour
     float throwStartTime = Mathf.NegativeInfinity;
     float homeingFlightTime => Time.time - throwStartTime;
     Vector3 throwPosition;
-    bool throwReset;
     Vector3 lastPosition;
 
 
@@ -40,22 +39,11 @@ public class Bottle : MonoBehaviour
     {
         if ((mode == EMode.InFlight || mode == EMode.Homing))
         {
-            if (!throwReset)
+            if (Vector3.Distance(transform.position, lastPosition) > moveTooFastDistance)
             {
-                throwReset = true;
-                transform.position = throwPosition;
+                transform.position = lastPosition;
+                Debug.LogWarning(name + " moving too fast");
             }
-            
-            else
-            {
-                if (Vector3.Distance(transform.position, lastPosition) > moveTooFastDistance)
-                {
-                    transform.position = lastPosition;
-                    Debug.LogWarning(name + " moving too fast");
-                }
-            }
-
-            //print("bottle position = " + transform.position);
         }
 
         if (mode == EMode.Homing && homeingFlightTime > homingDelay)
@@ -80,7 +68,7 @@ public class Bottle : MonoBehaviour
     {
         if (other.tag == "DoNotHit")return;
 
-        if (Time.time > 0.5f) Debug.Log(name + " hit " + other.gameObject.name);
+        if (Time.time > 0.5f && other.tag != "Player") Debug.Log(name + " hit " + other.gameObject.name);
       
         if (mode == EMode.Pickup)
         {
