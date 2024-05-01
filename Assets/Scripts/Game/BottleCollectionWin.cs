@@ -7,6 +7,9 @@ public class BottleCollectionWin : MonoBehaviour
     int bottlesInLevel;
     int bottlesCollected;
 
+    public int BottlesInLevel => bottlesInLevel;
+    public int BottlesCollected => bottlesCollected;
+
     private void Start()
     {
         bottlesInLevel = FindObjectsOfType<Bottle>().Length;
@@ -20,5 +23,7 @@ public class BottleCollectionWin : MonoBehaviour
         {
             Debug.LogWarning("Game has been won!");
         }
+
+        UI.Objective.UpdateObjectiveText();
     }
 }

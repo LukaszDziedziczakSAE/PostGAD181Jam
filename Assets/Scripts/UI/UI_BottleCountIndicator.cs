@@ -14,6 +14,6 @@ public class UI_BottleCountIndicator : MonoBehaviour
     }
     public void UpdateBottlesCollected()
     {
-        bottlesCollected.text= "Bottles: " + Player.Instance.Inventory.BottlesCollected.ToString();
+        bottlesCollected.text= /*"Bottles: " +*/ Player.Instance.Inventory.BottlesCollected.ToString();
     }
 }

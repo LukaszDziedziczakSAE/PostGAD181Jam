@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7586690374704467712}
   - component: {fileID: 4283712769464988333}
+  - component: {fileID: 2055735862368699461}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -50,3 +51,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundRaycastHeight: 5
+  minFallHeight: 0.5
+  timeToRespawnAfterDeath: 2
+  collectionWin: {fileID: 2055735862368699461}
+--- !u!114 &2055735862368699461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672740413020329636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db26664ec49d7934cb5dd6d009c910cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
