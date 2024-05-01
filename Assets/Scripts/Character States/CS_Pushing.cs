@@ -37,8 +37,12 @@ public class CS_Pushing : CharacterState
 
         if (playerInput == null) Debug.LogError("Missing player input");
 
-        character.transform.eulerAngles = new Vector3 (character.transform.eulerAngles.x, crate.PlayerFaceDirection, character.transform.eulerAngles.z);
+        character.transform.eulerAngles = new Vector3(character.transform.eulerAngles.x, crate.PlayerFaceDirection, character.transform.eulerAngles.z);
+        UpdatePlayerPosition();
+    }
 
+    private void UpdatePlayerPosition()
+    {
         Vector3 position = character.transform.position;
         if (crate.AxisOfMovement == Crate.EAxisOfMovement.zAxis)
         {
@@ -48,8 +52,6 @@ public class CS_Pushing : CharacterState
         {
             position.x = crate.PlayerPosition;
         }
-
-        //Debug.Log("crate position = " + crate.transform.position + ", setting position = " + position);
         character.transform.position = position;
     }
 
@@ -93,11 +95,11 @@ public class CS_Pushing : CharacterState
             //Move(deltaTime);
 
             crate.Move(playerInput.Movement.y * character.PushingSpeed * deltaTime);
-
-            Vector3 position = character.transform.position;
+            UpdatePlayerPosition();
+            /*Vector3 position = character.transform.position;
             Vector3 forward = player.transform.forward;
             position += forward * playerInput.Movement.y * character.PushingSpeed * deltaTime;
-            character.Rigidbody.MovePosition(position);
+            character.Rigidbody.MovePosition(position);*/
         }
     }
 

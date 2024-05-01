@@ -104,7 +104,7 @@ MonoBehaviour:
   smashPrefab: {fileID: 19800004, guid: b46890100828db6429ff69c322b45893, type: 3}
   homingSpeed: 10
   damage: 100
-  homingDelay: 0.5
+  homingDelay: 0.25
   targetHeightOffset: 1.7
   pickUpEffect: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55,
     type: 3}
