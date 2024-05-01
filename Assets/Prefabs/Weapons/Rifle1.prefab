@@ -260,7 +260,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 7903908210615803646}
-  fireSound: {fileID: 0}
+  fireClips:
+  - {fileID: 8300000, guid: 63dde70cf1190094eb61bf1fd5f9e6f1, type: 3}
+  - {fileID: 8300000, guid: 7c72a62f3e0df914dab5003ffc2b0f1e, type: 3}
 --- !u!82 &7903908210615803646
 AudioSource:
   m_ObjectHideFlags: 0
@@ -270,7 +272,8 @@ AudioSource:
   m_GameObject: {fileID: 3648367300843421451}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2016053602313508300, guid: 13794901b54eb69428ac2e62ab7c0e12,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -317,7 +320,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

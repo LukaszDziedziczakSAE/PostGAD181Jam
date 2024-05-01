@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
     [SerializeField] float minFallHeight = 0.5f;
     [SerializeField] float timeToRespawnAfterDeath = 2f;
     [SerializeField] BottleCollectionWin collectionWin;
+    [SerializeField] Music music;
 
     float timer;
 
@@ -21,6 +22,7 @@ public class Game : MonoBehaviour
     public static float GroundRaycastHeight => Instance.groundRaycastHeight;
     public static float MinFallHeight => Instance.minFallHeight;
     public static BottleCollectionWin BottleCollectionWin => Instance.collectionWin;
+    public static Music Music => Instance.music;
 
     private void Awake()
     {

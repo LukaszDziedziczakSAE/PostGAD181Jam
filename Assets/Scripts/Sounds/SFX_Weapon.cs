@@ -5,11 +5,14 @@ using UnityEngine;
 public class SFX_Weapon : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip fireSound;
+    [SerializeField] AudioClip[] fireClips;
 
-    public void PlayerFireSFX()
+    public void PlayFiringSound()
     {
-        audioSource.clip = fireSound;
+        if (fireClips.Length == 0) return;
+        audioSource.loop = false;
+        audioSource.clip = fireClips[Random.Range(0, fireClips.Length)];
         audioSource.Play();
     }
+
 }

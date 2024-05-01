@@ -32,7 +32,7 @@ public class Weapon : MonoBehaviour
         //Debug.LogWarning("Weapon Fire");
         lastFire = Time.time;
         muzzleEffect?.Play();
-        SFX?.PlayerFireSFX();
+        SFX?.PlayFiringSound();
 
         Ray ray = new Ray(muzzle.position, muzzle.forward);
         Debug.DrawRay(muzzle.position, muzzle.forward * 50f, Color.red, 5);
