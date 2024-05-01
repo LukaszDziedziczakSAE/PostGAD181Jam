@@ -108,6 +108,7 @@ MonoBehaviour:
   targetHeightOffset: 1.7
   pickUpEffect: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55,
     type: 3}
+  moveTooFastDistance: 0.6
 --- !u!135 &4928408969767102941
 SphereCollider:
   m_ObjectHideFlags: 0

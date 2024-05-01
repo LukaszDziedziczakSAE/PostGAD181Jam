@@ -73,7 +73,7 @@ public class Bottle : MonoBehaviour
             transform.localEulerAngles = spawnRotation;
         }
 
-        lastPosition = transform.localPosition;
+        lastPosition = transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
