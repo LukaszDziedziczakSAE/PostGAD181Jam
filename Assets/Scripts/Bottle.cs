@@ -21,10 +21,15 @@ public class Bottle : MonoBehaviour
     [SerializeField] float moveTooFastDistance = 2f;
 
     Enemy target;
-    float throwStartTime = Mathf.NegativeInfinity;
+    float throwStartTime = 0;
     float homeingFlightTime => Time.time - throwStartTime;
     Vector3 throwPosition;
     Vector3 lastPosition;
+
+    private void Start()
+    {
+        lastPosition = transform.position;
+    }
 
 
     public enum EMode
@@ -115,6 +120,7 @@ public class Bottle : MonoBehaviour
         //transform.parent = player.RightHand;
         //transform.localPosition = spawnPosition;
         //transform.localEulerAngles = spawnRotation;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     public void SetModeInFlight(Vector3 newVelocity)
@@ -126,6 +132,7 @@ public class Bottle : MonoBehaviour
         transform.parent = null;
 
         rb.ResetInertiaTensor();
+        rb.constraints = RigidbodyConstraints.None;
         rb.velocity = newVelocity;
         trigger.enabled = true;
     }
@@ -140,6 +147,7 @@ public class Bottle : MonoBehaviour
         throwPosition = transform.position;
         transform.parent = null;
 
+        rb.constraints = RigidbodyConstraints.None;
         rb.ResetInertiaTensor();
         rb.velocity = newVelocity;
         throwStartTime = Time.time;

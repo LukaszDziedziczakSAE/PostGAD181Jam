@@ -12,6 +12,7 @@ public class UI : MonoBehaviour
     [SerializeField] UI_Objective objective;
     [SerializeField] SFX_UI sfx;
     [SerializeField] UI_PauseMenu pauseMenu;
+    [SerializeField] UI_Debug debug;
     
     public static UI_Blackscreen Blackscreen => Instance.blackscreen;
     public static UI_BottleCountIndicator BottleCountIndicator => Instance.bottleCountIndicator;
@@ -19,6 +20,7 @@ public class UI : MonoBehaviour
     public static UI_Objective Objective => Instance.objective;
     public static SFX_UI SFX => Instance.sfx;
     public static UI_PauseMenu PauseMenu => Instance.pauseMenu;
+    public static UI_Debug Debug => Instance.debug;
     
     private void Awake()
     {
